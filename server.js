@@ -18,6 +18,8 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(bookclub.initialize());
 app.use(bookclub.session());
 
+
+require('dotenv').config()
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
