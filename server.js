@@ -1,7 +1,7 @@
 const express = require("express");
 const session = require("express-session");
 // Requiring passport as we've configured it
-const bookclub = require("./config/bookclub");
+// const bookclub = require("./config/bookclub");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
