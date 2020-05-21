@@ -8,6 +8,7 @@ module.exports = function(app) {
 
   // index route loads main handlebar and 
   app.get("/", function(req, res) {
+    res.render("index");
 
   });
 
