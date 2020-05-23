@@ -14,7 +14,16 @@ module.exports = (app) => {
 
 
   app.get("/:clubName", (req, res) => {
+<<<<<<< HEAD
+    res.render("clubs")
+  });
+
+
+};
+
+=======
     res.render
 
 });
 }
+>>>>>>> 241807bf51ce1d20987329d54caf5285babdc774
