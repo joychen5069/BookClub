@@ -12,5 +12,9 @@ module.exports = function(app) {
 
   });
 
+  app.get("/:clubName", function(req, res) {
+    res.render
+  })
+
 
 };
