@@ -1,4 +1,3 @@
-
 const express = require("express");
 const session = require("express-session");
 
@@ -19,11 +18,8 @@ app.set("view engine", "handlebars");
 
 
 // Requiring our routes
-const htmlRoutes = require("./routes/html-routes.js")
-const apiRoutes = require("./routes/api-routes.js")
-
-app.use(htmlRoutes);
-app.use(apiRoutes)
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
