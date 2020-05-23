@@ -12,9 +12,8 @@ module.exports = (app) => {
 
   });
 
+
   app.get("/:clubName", (req, res) => {
     res.render
-  })
 
-
-};
+});
