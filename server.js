@@ -19,8 +19,11 @@ app.set("view engine", "handlebars");
 
 
 // Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+const htmlRoutes = require("./routes/html-routes.js")
+const apiRoutes = require("./routes/api-routes.js")
+
+app.use(htmlRoutes);
+app.use(apiRoutes)
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {

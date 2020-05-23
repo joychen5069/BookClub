@@ -8,14 +8,14 @@ module.exports = (app) => {
 
   // index route loads main handlebar and 
   app.get("/", (req, res) => {
-    res.render("index");
+    res.render("index");;
 
   });
 
 
-  // app.get("/:clubName", (req, res) => {
-  //   res.render("clubs")
-  // });
+  app.get("/clubs", (req, res) => {
+    res.render("clubs")
+  });
 
 
 };
