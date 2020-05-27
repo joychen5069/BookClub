@@ -1,13 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
-  const Clubs = sequelize.define("Clubs", {
+  const Clubs = sequelize.define("clubs", {
     clubName: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
-      validate: {
-        len: [1]
-      }
+      
     }
   });
-
+console.log(Clubs)
    return Clubs;
 };
