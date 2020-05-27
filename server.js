@@ -18,8 +18,9 @@ app.set("view engine", "handlebars");
 
 
 // Requiring our routes
-require("./routes/html-routes.js")(app);
-require("./routes/api-routes.js")(app);
+const routes = require("./controllers/book_controllers");
+
+app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
