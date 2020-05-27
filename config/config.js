@@ -1,8 +1,8 @@
 require('dotenv').config();
 const mysql = require("mysql");
-//use heroku db if running off heroku
 let connection;
 
+//use Heroku db if running off heroku
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {
