@@ -1,29 +1,29 @@
 const express = require("express");
-const session = require("express-session");
 
-// Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
-const db = require("./models");
 
-// Creating express app and configuring middleware needed for authentication
 const app = express();
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+
+// Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-//added code for handlebars 
-var exphbs = require("express-handlebars");
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Set Handlebars.
+const exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Import routes and give the server access to them.
+const routes = require("./controllers/book_controllers");
 
-// Requiring our routes
-require("./controllers/club_controller.js")(app);
-// require("./routes/api-routes.js")(app);
+app.use(routes);
 
-// Syncing our database and logging a message to the user upon success
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
+// Start our server so that it can begin listening to client requests.
+app.listen(PORT, () => {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
 });

@@ -1,4 +1,5 @@
-var path = require("path");
+var db = require("../models");
+const Clubs = require("../models/clubList")
 
 // Routes
 // =============================================================
@@ -8,13 +9,14 @@ module.exports = (app) => {
 
   // index route loads main handlebar and 
   app.get("/", (req, res) => {
-    res.render("index");;
-    console.log(res);
+    res.render("index");
+
   });
 
 
   app.get("/clubs", (req, res) => {
-    res.render("clubs")
+    // console.log(req)
+    res.sendFile(path.join(__dirname, " "))
   });
 
 
