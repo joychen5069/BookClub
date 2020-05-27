@@ -1,24 +1,26 @@
 require('dotenv').config();
-module.exports = {
-  development: {
-    username: process.env.DB_USER,
+const mysql = require("mysql");
+let connection;
+
+//use Heroku db if running off heroku
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: process.env.DB_USER,
     password: process.env.DB_PASS,
-    database: "book_club",
-    host: "127.0.0.1",
-    dialect: "mysql"
-  },
-  test: {
-    username: "root",
-    password: process.env.DB_PASS,
-    database: "database_test",
-    host: "127.0.0.1",
-    dialect: "mysql"
-  },
-  production: {
-    username: "root",
-    password: process.env.DB_PASS,
-    database: "database_production",
-    host: "127.0.0.1",
-    dialect: "mysql"
+    database: "book_club"
+  })
+};
+
+connection.connect((err) => {
+  if (err) {
+    console.error("error connecting: " + err.stack);
+    return;
   }
-}
+  console.log("connected as id " + connection.threadId);
+});
+
+module.exports = connection;
