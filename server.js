@@ -5,6 +5,7 @@ const session = require("express-session");
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
+const axios = require('axios');
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -28,3 +29,4 @@ db.sequelize.sync().then(() => {
     console.log("Server listening on: http://localhost:" + PORT);
   });
 });
+
