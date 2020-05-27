@@ -10,7 +10,7 @@ router.get("/clubs", (req, res) => {
     let hbsObject = {
       clubs: data
     };
-    // console.log(hbsObject);
+    console.log(hbsObject);
     res.render("clubs", hbsObject);
   });
 });
