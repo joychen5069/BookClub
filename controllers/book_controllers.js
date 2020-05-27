@@ -5,7 +5,14 @@ const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 //create route to display all the clubs using handlebars
+
+router.get("/", (req, res) => {
+    res.render("index");
+});
+
+
 router.get("/clubs", (req, res) => {
+
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
@@ -14,6 +21,8 @@ router.get("/clubs", (req, res) => {
     res.render("clubs", hbsObject);
   });
 });
+
+
 
 // //create route to add a club to the 'not' devoured list
 // router.post("/api/clubs", (req, res) => {
