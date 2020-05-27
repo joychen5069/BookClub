@@ -1,5 +1,5 @@
 const express = require('express');
-const club = require('../models/clubList')
+const club = require('../models/clubs')
 
 const router = express.Router();
 
@@ -10,7 +10,7 @@ router.get("/clubs", (req, res) => {
     let hbsObject = {
       clubs: data
     };
-    // console.log(hbsObject);
+    console.log(hbsObject);
     res.render("clubs", hbsObject);
   });
 });
