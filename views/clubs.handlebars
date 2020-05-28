@@ -2,7 +2,9 @@
 
 <ul>
   {{#each clubs }}
-  <li>Name: {{clubName}}</li>
+  <li>Name: {{clubName}}
+    <button type="submit" class="delete" data-id="{{id}}">Delete</button>
+  </li>
   {{/each}}
 </ul>
 

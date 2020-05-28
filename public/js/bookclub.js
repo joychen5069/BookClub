@@ -21,6 +21,25 @@ $(() =>{
       })
   //get information from API 
 
+  //delete function
+  $(".delete").on("click", (event) => {
+    event.preventDefault()
+    console.log("clicked delete")
+    let id = $(this).data("id");
+    
+
+    // Send the PUT request.
+    $.ajax("/api/clubs/" + id, {
+      type: "DELETE",
+        }).then(
+      () => {
+        console.log("club is now devoured", eat);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
   });
 
 })

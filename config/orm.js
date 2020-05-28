@@ -71,15 +71,27 @@ const orm = {
     });
   },
   // An example of objColVals would be {name: panther, sleepy: true}
-  updateOne: (table, objColVals, condition, cb) => {
-    let queryString = "UPDATE " + table;
+  // updateOne: (table, objColVals, condition, cb) => {
+  //   let queryString = "UPDATE " + table;
 
-    queryString += " SET ";
-    queryString += objToSql(objColVals);
-    queryString += " WHERE ";
-    queryString += condition;
+  //   queryString += " SET ";
+  //   queryString += objToSql(objColVals);
+  //   queryString += " WHERE ";
+  //   queryString += condition;
 
-    console.log(queryString);
+  //   console.log(queryString);
+  //   connection.query(queryString, (err, result) => {
+  //     if (err) {
+  //       throw err;
+  //     }
+
+  //     cb(result);
+  //   });
+  // },
+  //delete function
+  deleteOne: (table, condition, cb) => {
+    let queryString = "DELETE FROM " + table + " WHERE " + condition;
+
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
