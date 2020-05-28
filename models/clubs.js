@@ -15,12 +15,12 @@ const club = {
       });
     },
     
-    // //update burger to be devoured 
-    // updateOne: (objColVals, condition, cb) => {
-    //   orm.updateOne("clubs", objColVals, condition, (res) => {
-    //     cb(res);
-    //   });
-    // },
+    delete: function(condition, cb) {
+      orm.delete("clubs", condition, function(res) {
+        cb(res);
+      });
+    }
+    
     
   };
   
