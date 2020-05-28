@@ -2,9 +2,7 @@ $(() =>{
   //submit button
   $("#submit").on("click", (event) => {
     event.preventDefault();
-    
     let newClub = {name: $("#ca").val().trim()};
-     
     // Send the POST request.
     $.ajax("/api/clubs", {
       type: "POST",
@@ -16,29 +14,18 @@ $(() =>{
         location.reload();
       });
   });
-
-  $(".delete-club").on("click", (event) => {
+  $(".delete-club").on("click", function(event) {
     console.log("delete")
-    let id = $(this).data("id");
-
+    var id = $(this).data("id");
     // Send the DELETE request.
     $.ajax("/api/clubs/" + id, {
       type: "DELETE"
     }).then(
-      () => {
+      function() {
         console.log("deleted club", id);
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
-
-
 });
-
-
-
-  
-  
-
-

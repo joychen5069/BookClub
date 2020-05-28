@@ -1,4 +1,4 @@
-  <nav>
+ <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -8,18 +8,15 @@
       </ul>
     </div>
   </nav>
-
-
 <div class="container">
   <ul class="collection">
     {{#each clubs }}
     <li class="collection-item">
       {{clubName}}
-      <button class="delete-club" id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
+      <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
       </li>
     {{/each}}
   </ul>
-
     <form class="create-club">
   <div class="form-group">
     <label for="ca">Club Name:</label>
@@ -27,9 +24,3 @@
   </div>
   <button class="rounded" type="submit" id="submit">Add Club</button>
 </form>
-
-
-</div>
-
-
-
