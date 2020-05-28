@@ -17,25 +17,23 @@ router.get("/clubs", (req, res) => {
     let hbsObject = {
       clubs: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("clubs", hbsObject);
   });
 });
 
-
-
-// //create route to add a club to the 'not' devoured list
-// router.post("/api/clubs", (req, res) => {
-//   console.log(req.body)
-//   club.insertOne([
-//     "club_name", "devoured"
-//   ], [
-//     req.body.name, false
-//   ], (result) => {
-//     // Send back the ID of the new quote
-//     res.json({ id: result.insertId });
-//   });
-// });
+//create route to add a club to list
+router.post("/api/clubs", (req, res) => {
+  console.log(req.body.name)
+  club.insertOne([
+    "clubName"
+  ], [
+    req.body.name
+  ], (result) => {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
 // //create route to update the club to be devoured if the user clicks on the button
 // router.put("/api/clubs/:id", (req, res) => {
