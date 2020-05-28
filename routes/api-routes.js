@@ -1,13 +1,15 @@
-const db = require("../models/clubList");
+const db = require("../models/");
 
 // Routes
 // =============================================================
 module.exports = (app) => {
 
+  // console.log(db.Clubs)
+
   // GET route for all the club names
   app.get("/api/clubs", (req, res) => {
-    db.Clubs.findAll({}).thend(dbClubs => {
-      console.log("pulling all club names", dbClubs)
+    db.Clubs.findAll({}).then(dbClubs => {
+      console.log("pulling all club names", JSON.stringify(dbClubs))
       res.json(dbClubs)
     })
   });
