@@ -23,4 +23,20 @@ $(() =>{
 
   });
 
+  $(".delete-club").on("click", function(event) {
+    console.log("delete")
+    var id = $(this).data("id");
+
+    // Send the DELETE request.
+    $.ajax("/api/clubs/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted club", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
 })
