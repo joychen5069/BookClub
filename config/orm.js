@@ -1,11 +1,6 @@
 // Import MySQL connection.
 const connection = require("../config/config.js");
 
-// Helper function for SQL syntax.
-// Let's say we want to pass 3 values into the mySQL query.
-// In order to write the query, we need 3 question marks.
-// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
-// ["?", "?", "?"].toString() => "?,?,?";
 printQuestionMarks = (num) => {
   const arr = [];
 
@@ -16,7 +11,7 @@ printQuestionMarks = (num) => {
   return arr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
+
 objToSql = (ob) => {
   const arr = [];
 
@@ -70,10 +65,10 @@ const orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
-  // updateOne: (table, objColVals, condition, cb) => {
-  //   let queryString = "UPDATE " + table;
-
+  
+  updateOne: (table, objColVals, condition, cb) => {
+    let queryString = "UPDATE " + table;
+  },
   //   queryString += " SET ";
   //   queryString += objToSql(objColVals);
   //   queryString += " WHERE ";
@@ -89,10 +84,24 @@ const orm = {
   //   });
   // },
   //delete function
-  deleteOne: (table, condition, cb) => {
-    let queryString = "DELETE FROM " + table + " WHERE " + condition;
+  // deleteOne: (table, condition, cb) => {
+  //   let queryString = "DELETE FROM " + table + " WHERE " + condition;
 
-    connection.query(queryString, (err, result) => {
+  //   connection.query(queryString, (err, result) => {
+  //     if (err) {
+  //       throw err;
+  //     }
+
+  //     cb(result);
+  //   });
+  // },
+
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
       }
@@ -100,7 +109,8 @@ const orm = {
       cb(result);
     });
   }
+
 };
 
-// Export the orm object for the model (cat.js).
+// Export the orm 
 module.exports = orm;

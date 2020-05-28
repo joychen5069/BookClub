@@ -35,22 +35,18 @@ router.post("/api/clubs", (req, res) => {
   });
 });
 
-//create route to update the club to be devoured if the user clicks on the button
-router.delete("/api/clubs/:id", (req, res) => {
-  let condition = "id = " + req.params.id;
+router.delete("/api/clubs/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-  // console.log("condition", condition);
-
-  club.deleteOne({
-    
-  }, condition, (result) => {
-    if (result.changedRows == 0) {
+  club.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
     } else {
-      res.send(200).end();
+      res.status(200).end();
     }
   });
 });
+
 
 module.exports = router;

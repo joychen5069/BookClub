@@ -15,12 +15,12 @@ const club = {
       });
     },
     
-    //update burger to be devoured 
-    deleteOne: (condition, cb) => {
-      orm.deleteOne("clubs", condition, (res) => {
+    delete: function(condition, cb) {
+      orm.delete("clubs", condition, function(res) {
         cb(res);
       });
-    },
+    }
+    
     
   };
   
