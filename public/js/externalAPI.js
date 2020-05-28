@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   console.log("ready!");
       
       const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
@@ -6,7 +6,7 @@ $(document).ready(function() {
   const NYT_ENTIRE_API_URL = `${NYT_API_URL}${NYT_API_KEY}`;
   
   // NY TIMES API 
-  fetch(`${NYT_API_URL}${NYT_API_KEY}`, {
+  fetch(`${NYT_ENTIRE_API_URL}`, {
         method: 'get',
       })
       .then(response => { return response.json(); })
@@ -34,5 +34,4 @@ $(document).ready(function() {
     .catch(error => {
       console.log('NYT API Error: Defaulting to nytimes archival data.');
     });
-  
   }); // Final closing tag 
