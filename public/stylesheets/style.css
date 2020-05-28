@@ -1,0 +1,19 @@
+body {
+    font-family: 'Zilla Slab', serif;
+}
+
+h2 {
+    font-weight:300 !important;
+    letter-spacing: .1em;
+    margin: 10px !important;
+    color: black !important;
+}
+
+nav {
+    background-color: white !important;
+    color: black !important;
+}
+
+nav ul a {
+    color: black !important;
+}
