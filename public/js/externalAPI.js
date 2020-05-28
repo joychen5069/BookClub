@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   console.log("ready!");
       
       const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
