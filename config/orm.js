@@ -1,4 +1,3 @@
-// Import MySQL connection.
 const connection = require("../config/config.js");
 
 printQuestionMarks = (num) => {
@@ -66,10 +65,7 @@ const orm = {
     });
   },
   
-  updateOne: (table, objColVals, condition, cb) => {
-    let queryString = "UPDATE " + table;
-  },
-
+ 
   delete: function(table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
