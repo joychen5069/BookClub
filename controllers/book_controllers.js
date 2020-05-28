@@ -5,19 +5,26 @@ const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
 //create route to display all the clubs using handlebars
+
+router.get("/", (req, res) => {
+    res.render("index");
+});
+
+
 router.get("/clubs", (req, res) => {
+
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
     };
-    console.log(hbsObject);
+    // console.log(hbsObject);
     res.render("clubs", hbsObject);
   });
 });
 
 //create route to add a club to list
 router.post("/api/clubs", (req, res) => {
-  console.log(req.body)
+  console.log(req.body.name)
   club.insertOne([
     "clubName"
   ], [
