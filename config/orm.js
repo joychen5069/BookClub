@@ -78,6 +78,20 @@ const orm = {
 
       cb(result);
     });
+  },
+
+  createClub: function( cb) {
+    var queryString = "SELECT * FROM " + table1;
+    queryString += " UNION "
+    queryString += table2;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
   }
 
 };

@@ -52,9 +52,10 @@ router.delete("/api/clubs/:id", function(req, res) {
 
 router.get("/books", (req, res) => {
 
-  book.selectAll((data) => {
+  book.join((data) => {
     let hbsObject = {
-      books: data
+      books: data,
+      clubs: data
     };
     
     // console.log(hbsObject);
