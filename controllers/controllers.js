@@ -1,4 +1,5 @@
 const express = require('express');
+
 const club = require('../models/clubs')
 const book = require('../models/books')
 
@@ -15,12 +16,10 @@ router.get("/create", (req, res) => {
 
 //Create route to view all clubs
 router.get("/clubs", (req, res) => {
-
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
     };
-    
     res.render("clubs", hbsObject);
   });
 });
@@ -51,7 +50,6 @@ router.get("/clubs/:id", function(req, res) {
 //Create route to delete a club by id
 router.delete("/api/clubs/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
   club.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -62,21 +60,25 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
+router.get("/clubs/:id", function(req, res) {
+  var clubId = req.params.id;
+  club.selectByID(clubId, (data) => {
+    let hbsObject = {
+      books: data
+    };
+    res.render("club-home", hbsObject);
+  });
+});
 
 //INSERT BOOK ROUTES BELOW
-
-// Create route to view top 15 books & add new books 
 router.get("/books", (req, res) => {
-
   book.selectAll((data) => {
     let hbsObject = {
       books: data
     };
-    
     // console.log(hbsObject);
     res.render("books", hbsObject)
   });
-
 });
 
 module.exports = router;

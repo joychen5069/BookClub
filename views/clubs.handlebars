@@ -10,11 +10,13 @@
   </nav>
 
 <div class="container">
-  <ul class="collection">
+  <ul class="collection" id="clubsListStyle">
     {{#each clubs}}
     <li class="collection-item"></li>
-      <a href="/clubs/{{this.id}}">{{clubName}} </a>
-      <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
+      <a href="/clubs/{{this.id}}"><h5>{{clubName}}</a>
+      <a class="delete-club btn-floating btn-tiny waves-effect waves-light red"  data-id="{{this.id}}"><i class="material-icons">delete_forever</i></a>
+      {{!-- <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button> --}}
+      </h5>
       </li>
     {{/each}}
   </ul>
