@@ -78,7 +78,24 @@ const orm = {
 
       cb(result);
     });
-  }
+  },
+
+  selectbyId: function(table, id, cb) {
+    var queryString = "SELECT * FROM " + table + " WHERE id =" + id;
+
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+    
+      if(result[0]) {
+        cb(result[0]);
+      } else {
+        throw new Error("404 that club ain't not existin'");
+      }
+      
+    })
+  } 
 
 };
 
