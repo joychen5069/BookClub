@@ -13,7 +13,8 @@
     {{#each clubs }}
     <li class="collection-item">
       {{clubName}}
-      <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
+      <button class="view-club" data-id="{{this.id}}"><i class="material-icons">book</i>View This Club</button>
+      <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i>Delete This Club</button>
       </li>
     {{/each}}
   </ul>
