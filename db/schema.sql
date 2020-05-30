@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS book_club;
 
 CREATE DATABASE book_club;
 
+USE book_club; 
+
 CREATE TABLE clubs (
 id int AUTO_INCREMENT NOT NULL,
 clubName VARCHAR(30) NOT NULL,
@@ -26,4 +28,3 @@ description VARCHAR(25) NOT NULL,
 image VARCHAR(200) NOT NULL,
 PRIMARY KEY(id)
 );
-
