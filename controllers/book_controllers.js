@@ -10,6 +10,9 @@ router.get("/", (req, res) => {
     res.render("index");
 });
 
+router.get("/create", (req, res) => {
+  res.render("create-a-club");
+});
 
 //create route to view all clubs
 router.get("/clubs", (req, res) => {
