@@ -17,8 +17,6 @@ VALUES ("Club Two");
 INSERT INTO clubs (clubName)
 VALUES ("Club Three");
 
-USE book_club;
-
 CREATE TABLE books (
 id int AUTO_INCREMENT NOT NULL,
 clubId Int(15) NOT NULL,

@@ -5,9 +5,7 @@ const book = require('../models/books')
 
 const router = express.Router();
 
-// Create all our routes and set up logic within those routes where required.
-
-//create route to display main page
+//Create route to display main page
 router.get("/", (req, res) => {
     res.render("index");
 });
@@ -16,7 +14,7 @@ router.get("/create", (req, res) => {
   res.render("create-a-club");
 });
 
-//create route to view all clubs
+//Create route to view all clubs
 router.get("/clubs", (req, res) => {
   club.selectAll((data) => {
     let hbsObject = {
@@ -26,7 +24,7 @@ router.get("/clubs", (req, res) => {
   });
 });
 
-//create route to add a club to list
+//Create route to add a club to list
 router.post("/api/clubs", (req, res) => {
   console.log(req.body.name)
   club.insertOne([
@@ -38,7 +36,18 @@ router.post("/api/clubs", (req, res) => {
   });
 });
 
-//create route to delete a club by id
+//Create route to get club by id
+router.get("/clubs/:id", function(req, res) {
+  var clubId = req.params.id;
+  club.selectByID(clubId, (data) => {
+    let hbsObject = {
+      club: data
+    };
+    res.render("club-home", hbsObject);
+  });
+});
+
+//Create route to delete a club by id
 router.delete("/api/clubs/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   club.delete(condition, function(result) {
@@ -55,7 +64,7 @@ router.get("/clubs/:id", function(req, res) {
   var clubId = req.params.id;
   club.selectByID(clubId, (data) => {
     let hbsObject = {
-      club: data
+      books: data
     };
     res.render("club-home", hbsObject);
   });
