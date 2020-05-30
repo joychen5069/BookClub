@@ -1,5 +1,6 @@
 const express = require('express');
 const club = require('../models/clubs')
+const book = require('../models/books')
 
 const router = express.Router();
 
@@ -9,7 +10,6 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.render("index");
 });
-
 
 router.get("/clubs", (req, res) => {
 
@@ -46,6 +46,31 @@ router.delete("/api/clubs/:id", function(req, res) {
       res.status(200).end();
     }
   });
+});
+
+//INSERT BOOK ROUTES BELOW
+
+router.get("/books", (req, res) => {
+
+  book.selectAll((data) => {
+    let hbsObject = {
+      books: data
+    };
+    
+    // console.log(hbsObject);
+    res.render("books", hbsObject)
+  });
+
+  //pull the clubs
+  // club.selectAll((data) => {
+  //   let clubObj = {
+  //     clubs: data
+  //   };
+    
+  //   // console.log(clubObj);
+  //   res.render("top-picks", clubObj)
+  // });
+
 });
 
 
