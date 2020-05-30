@@ -4,20 +4,20 @@ const club = require('../models/clubs')
 const router = express.Router();
 
 // Create all our routes and set up logic within those routes where required.
-//create route to display all the clubs using handlebars
 
+//create route to display main page
 router.get("/", (req, res) => {
     res.render("index");
 });
 
-
+//create route to view all clubs
 router.get("/clubs", (req, res) => {
 
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
     };
-    // console.log(hbsObject);
+    
     res.render("clubs", hbsObject);
   });
 });
@@ -30,11 +30,11 @@ router.post("/api/clubs", (req, res) => {
   ], [
     req.body.name
   ], (result) => {
-    // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
+//create route to delete a club by id
 router.delete("/api/clubs/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
