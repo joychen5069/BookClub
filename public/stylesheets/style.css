@@ -2,6 +2,11 @@ body {
     font-family: 'Zilla Slab', serif;
 }
 
+a {
+    color: #2C4F50 !important;
+}
+
+
 h2 {
     font-weight:300 !important;
     letter-spacing: .1em;
@@ -16,4 +21,31 @@ nav {
 
 nav ul a {
     color: black !important;
+}
+
+.bigLandingImg {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+  .centeredText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+  }
+
+#clubsListStyle {
+    padding-left: 10px;
+    color: black;
+}
+
+.mainpageinfo {
+    text-align: center;
+}
+
+.fas {
+    font-size: 30px;
 }
