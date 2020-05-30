@@ -97,9 +97,26 @@ const orm = {
       }
       
     })
-  } 
+  },
 
-};
+//   dropDown: function(tab1, tab2, cb) {
+//     var queryString = "SELECT * FROM " + tab1;
+//     var queryString1 = "SELECT * FROM " + tab2;
+
+//     connection.query(queryString, function(err, result) {
+//       if (err) {
+//         throw err;
+//       } cb(result)
+//       connection.query(queryString1, function(err, result) {
+//         if (err) {
+//           throw err;
+//         }
+//         cb(result)
+//   })
+// })
+
+// }
+}
 
 // Export the orm 
 module.exports = orm;
