@@ -11,7 +11,10 @@ router.get("/", (req, res) => {
 });
 
 router.get("/myclub", (req, res) => {
+  
+  
   res.render("individualclub");
+
 });
 
 //create route to view all clubs
