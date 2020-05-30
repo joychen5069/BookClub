@@ -48,6 +48,8 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
+//INSERT BOOK ROUTES BELOW
+
 router.get("/books", (req, res) => {
 
   book.selectAll((data) => {
