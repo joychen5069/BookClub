@@ -10,12 +10,6 @@ router.get("/", (req, res) => {
     res.render("index");
 });
 
-router.get("/myclub", (req, res) => {
-  
-  
-  res.render("individualclub");
-
-});
 
 //create route to view all clubs
 router.get("/clubs", (req, res) => {
