@@ -29,13 +29,6 @@ $(() =>{
     );
   });
 
-  $(".view-club").on("click", function(event) {
-    console.log("clicked")
-    render("individualclub")
-  });
-
-
-
-
+ 
 
 });

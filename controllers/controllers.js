@@ -1,32 +1,30 @@
 const express = require('express');
+
 const club = require('../models/clubs')
+const book = require('../models/books')
 
 const router = express.Router();
 
-// Create all our routes and set up logic within those routes where required.
-
-//create route to display main page
+//Create route to display main page
 router.get("/", (req, res) => {
     res.render("index");
 });
 
-router.get("/myclub", (req, res) => {
-  res.render("individualclub");
+router.get("/create", (req, res) => {
+  res.render("create-a-club");
 });
 
-//create route to view all clubs
+//Create route to view all clubs
 router.get("/clubs", (req, res) => {
-
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
     };
-    
     res.render("clubs", hbsObject);
   });
 });
 
-//create route to add a club to list
+//Create route to add a club to list
 router.post("/api/clubs", (req, res) => {
   console.log(req.body.name)
   club.insertOne([
@@ -38,10 +36,20 @@ router.post("/api/clubs", (req, res) => {
   });
 });
 
-//create route to delete a club by id
+//Create route to get club by id
+router.get("/clubs/:id", function(req, res) {
+  var clubId = req.params.id;
+  club.selectByID(clubId, (data) => {
+    let hbsObject = {
+      club: data
+    };
+    res.render("club-home", hbsObject);
+  });
+});
+
+//Create route to delete a club by id
 router.delete("/api/clubs/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
   club.delete(condition, function(result) {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -54,18 +62,23 @@ router.delete("/api/clubs/:id", function(req, res) {
 
 router.get("/clubs/:id", function(req, res) {
   var clubId = req.params.id;
-
   club.selectByID(clubId, (data) => {
     let hbsObject = {
-      club: data
+      books: data
     };
-    console.log("Aww shit \n" + JSON.stringify(hbsObject));
     res.render("club-home", hbsObject);
   });
 });
 
-
-
-
+//INSERT BOOK ROUTES BELOW
+router.get("/books", (req, res) => {
+  book.selectAll((data) => {
+    let hbsObject = {
+      books: data
+    };
+    // console.log(hbsObject);
+    res.render("books", hbsObject)
+  });
+});
 
 module.exports = router;
