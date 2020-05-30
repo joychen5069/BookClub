@@ -35,6 +35,7 @@ objToSql = (ob) => {
 
 // Object for all our SQL statement functions.
 const orm = {
+  //view all clubs
   selectAll: (tableInput, cb) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, (err, result) => {
@@ -54,7 +55,6 @@ const orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
 
     connection.query(queryString, vals, (err, result) => {
       if (err) {
@@ -65,7 +65,7 @@ const orm = {
     });
   },
   
- 
+  //delete a club
   delete: function(table, condition, cb) {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
