@@ -15,7 +15,7 @@ $(() =>{
       });
   });
   $(".delete-club").on("click", function(event) {
-    console.log("delete")
+    console.log("club deleted")
     var id = $(this).data("id");
     // Send the DELETE request.
     $.ajax("/api/clubs/" + id, {
@@ -28,4 +28,7 @@ $(() =>{
       }
     );
   });
+
+ 
+
 });

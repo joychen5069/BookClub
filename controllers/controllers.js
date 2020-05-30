@@ -4,25 +4,28 @@ const book = require('../models/books')
 
 const router = express.Router();
 
-// Create all our routes and set up logic within those routes where required.
-//create route to display all the clubs using handlebars
-
+//Create route to display main page
 router.get("/", (req, res) => {
     res.render("index");
 });
 
+router.get("/create", (req, res) => {
+  res.render("create-a-club");
+});
+
+//Create route to view all clubs
 router.get("/clubs", (req, res) => {
 
   club.selectAll((data) => {
     let hbsObject = {
       clubs: data
     };
-    // console.log(hbsObject);
+    
     res.render("clubs", hbsObject);
   });
 });
 
-//create route to add a club to list
+//Create route to add a club to list
 router.post("/api/clubs", (req, res) => {
   console.log(req.body.name)
   club.insertOne([
@@ -30,11 +33,22 @@ router.post("/api/clubs", (req, res) => {
   ], [
     req.body.name
   ], (result) => {
-    // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
+//Create route to get club by id
+router.get("/clubs/:id", function(req, res) {
+  var clubId = req.params.id;
+  club.selectByID(clubId, (data) => {
+    let hbsObject = {
+      club: data
+    };
+    res.render("club-home", hbsObject);
+  });
+});
+
+//Create route to delete a club by id
 router.delete("/api/clubs/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
@@ -48,8 +62,10 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
+
 //INSERT BOOK ROUTES BELOW
 
+// Create route to view top 15 books & add new books 
 router.get("/books", (req, res) => {
 
   book.selectAll((data) => {
@@ -61,17 +77,6 @@ router.get("/books", (req, res) => {
     res.render("books", hbsObject)
   });
 
-  //pull the clubs
-  // club.selectAll((data) => {
-  //   let clubObj = {
-  //     clubs: data
-  //   };
-    
-  //   // console.log(clubObj);
-  //   res.render("top-picks", clubObj)
-  // });
-
 });
-
 
 module.exports = router;

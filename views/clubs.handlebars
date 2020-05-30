@@ -1,27 +1,27 @@
- <nav>
+  <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
+      <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">TOP PICKS</a></li>
+        <li><a href="/books">TOP PICKS</a></li>
         <li><a href="/clubs">JOIN A CLUB</a></li>
         <li><a href="collapsible.html">CREATE CLUB</a></li>
       </ul>
     </div>
   </nav>
-  
+
 <div class="container">
   <ul class="collection">
-    {{#each clubs }}
-    <li class="collection-item">
-      {{clubName}}
+    {{#each clubs}}
+    <li class="collection-item"></li>
+      <a href="/clubs/{{this.id}}">{{clubName}} </a>
       <button class="delete-club" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
       </li>
     {{/each}}
   </ul>
-    <form class="create-club">
-  <div class="form-group">
-    <label for="ca">Club Name:</label>
-    <input type="text" id="ca" name="name">
-  </div>
-  <button class="rounded" type="submit" id="submit">Add Club</button>
-</form>
+
+  
+
+</div>
+
+
+
