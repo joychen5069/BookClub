@@ -56,35 +56,21 @@ router.get("/books", (req, res) => {
     let hbsObject = {
       books: data
     };
+    
     // console.log(hbsObject);
-    res.render("top-picks", hbsObject);
+    res.render("top-picks", hbsObject)
   });
-});
 
-//create route to add a book to list
-router.post("/api/books", (req, res) => {
-  console.log(req.body.name)
-  book.insertOne([
-    "bookName"
-  ], [
-    req.body.name
-  ], (result) => {
-    // Send back the ID of the new quote
-    res.json({ id: result.insertId });
-  });
-});
+  //pull the clubs
+  // club.selectAll((data) => {
+  //   let clubObj = {
+  //     clubs: data
+  //   };
+    
+  //   // console.log(clubObj);
+  //   res.render("top-picks", clubObj)
+  // });
 
-router.delete("/api/books/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-
-  book.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
 });
 
 
