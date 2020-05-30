@@ -19,7 +19,13 @@ const club = {
       orm.delete("clubs", condition, (res) => {
         cb(res);
       });
-    }
+    },
+
+    selectByID: (id, cb) => {
+      orm.selectbyId("clubs", id, (res) => {
+        cb(res);
+      });
+    },
     
     
   };

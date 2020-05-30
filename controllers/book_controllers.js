@@ -52,5 +52,20 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
+router.get("/clubs/:id", function(req, res) {
+  var clubId = req.params.id;
+
+  club.selectByID(clubId, (data) => {
+    let hbsObject = {
+      club: data
+    };
+    console.log("Aww shit \n" + JSON.stringify(hbsObject));
+    res.render("club-home", hbsObject);
+  });
+});
+
+
+
+
 
 module.exports = router;
