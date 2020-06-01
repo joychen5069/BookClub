@@ -1,58 +1,67 @@
 $(document).ready(function() {
 
-  // NY TIMES API 
-  const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
-  const NYT_API_KEY = 'Ci8Vjoo7efgZspORYyp2AbK75GGVXkRr';
-  const NYT_ENTIRE_API_URL = `${NYT_API_URL}${NYT_API_KEY}`;
-  
-  fetch(`${NYT_ENTIRE_API_URL}`, {
-    method: 'get',
-    })
-    .then(response => { return response.json(); })
-    .then(json => {
-    
-    //Hashmap data to get the results 
-    let results = json["results"];
+  function nyTimes() {
+    // NY TIMES API 
+    const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
+    const NYT_API_KEY = 'Ci8Vjoo7efgZspORYyp2AbK75GGVXkRr';
+    const NYT_ENTIRE_API_URL = `${NYT_API_URL}${NYT_API_KEY}`;
 
-    // Grabbing the Key for the Object  
-    Object.keys(results).map((object) => {
-      let tempObject = results[object]
+    fetch(`${NYT_ENTIRE_API_URL}`, {
+      method: 'get',
+      })
+      .then(response => { return response.json(); })
+      .then(json => {
+      
+      //Hashmap data to get the results 
+      let results = json["results"];
 
-      // Returning the value of the declared object
-      Object.keys(tempObject).map((key) => {
+      // Grabbing the Key for the Object  
+      Object.keys(results).map((object) => {
+        let tempObject = results[object]
+
+        // Returning the value of the declared object
+        Object.keys(tempObject).map((key) => {
         let value = tempObject[key];
-          key === "rank"? console.log("RANK", value):null
-          key === "amazon_product_url"? console.log("AMAZON URL", value):null
-          
+
+          // Returns the value of the rank 
+          key === "results"?(Object.values(value).map((tempObject) => {
+          let rank = tempObject.rank; //NEW
+          console.log("Rank:", rank) //NEW
+          })):null
+
+          // Returns the value of the the Amazon URL
+          key === "results"?(Object.values(value).map((tempObject) => {
+          let amazon = tempObject.amazon_product_url; //NEW
+          console.log("Amazon URL:", amazon) //NEW
+          })):null
+
           // Returns the value of the book details
           key === "book_details"?(Object.values(value).map((key3) => {
-            
-            // Filters for the value of the title
-            Object.keys(key3).filter(title => {
-            title === "title"?(console.log(key3[title])):null
-            })
+          let title = key3.title;
+          console.log("Title", title)
+          let author = key3.author;
+          console.log("Author", author)
+          let description = key3.description;
+          console.log("Description", description)
+          let isbn10 = key3.primary_isbn10;
+          console.log("ISBN10", isbn10)
+        
+          })):null // end of Object.Values for book_details
 
-            // Filters for the value of the author
-            Object.keys(key3).filter(author => {
-              author === "author"?(console.log(key3[author])):null
-            })
+          }) // end of Object.keys (tempObject)
+        }) // end of Object.keys(results)
+      }) //end of fetch 
 
-            // Filters for the value of the description
-            Object.keys(key3).filter(description => {
-            description === "description"?(console.log(key3[description])):null
-            })
-
-          })):null // book details key
-      }) // end of Object.keys
-    }) // end of Object.keys(results)
-  }) //end of fetch 
-
-    .catch(error => {
-    console.log('NYT API Error');
-  });
+      .catch(error => {
+      console.log('NYT API Error');
+    });
+  } // end of NYT API 
   
+  
+
   // GOOGLE API 
   
+  function googleAPI() { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
     const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
     const isbnNumber = '0735219117';
@@ -71,6 +80,13 @@ $(document).ready(function() {
       .catch(error => {
         console.log('GOOGLE API Error');
       });
+} // end of Google API 
+
+// Calls the NYT API function to run 
+nyTimes();
+
+// Calls the Google API function to run
+googleAPI();
 
 }); // Final closing tag 
 
