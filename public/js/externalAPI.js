@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-  function nyTimes() {
-    // NY TIMES API 
+  //  // NY TIMES API 
+  // function nyTimes() {
     const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
     const NYT_API_KEY = 'Ci8Vjoo7efgZspORYyp2AbK75GGVXkRr';
     const NYT_ENTIRE_API_URL = `${NYT_API_URL}${NYT_API_KEY}`;
@@ -55,17 +55,15 @@ $(document).ready(function() {
       .catch(error => {
       console.log('NYT API Error');
     });
-  } // end of NYT API 
-  
-  
+  // } // end of NYT API 
 
   // GOOGLE API 
-  
-  function googleAPI() { 
+  function googleAPI(isbn10) { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
     const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
-    const isbnNumber = '0735219117';
-    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbnNumber}${GOOGLE_API_KEY}`;
+    console.log("ISBN10_______________", isbn10)
+
+    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}${GOOGLE_API_KEY}`;
     console.log("GOOGLE URL", GOOGLE_ENTIRE_API_URL)
     
     fetch(`${GOOGLE_ENTIRE_API_URL}`, {
@@ -82,12 +80,10 @@ $(document).ready(function() {
       });
 } // end of Google API 
 
-// Calls the NYT API function to run 
-nyTimes();
+// // Calls the NYT API function to run 
+// nyTimes();
 
 // Calls the Google API function to run
 googleAPI();
 
 }); // Final closing tag 
-
-
