@@ -86,7 +86,7 @@ router.get("/books", (req, res) => {
 
 router.post("/api/books", (req, res) => {
   console.log(req.body.name)
-  res.render("top-picks");
+  res.render("club-home");
   
 });
 
