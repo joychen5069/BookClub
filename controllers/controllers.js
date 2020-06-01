@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
     res.render("index");
 });
 
+//Create route to display create a club page
 router.get("/create", (req, res) => {
   res.render("create-a-club");
 });
@@ -26,7 +27,7 @@ router.get("/clubs", (req, res) => {
 
 //Create route to add a club to list
 router.post("/api/clubs", (req, res) => {
-  console.log(req.body.name)
+   (req.body.name)
   club.insertOne([
     "clubName"
   ], [
@@ -60,15 +61,16 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
-router.get("/clubs/:id", function(req, res) {
-  var clubId = req.params.id;
-  club.selectByID(clubId, (data) => {
-    let hbsObject = {
-      books: data
-    };
-    res.render("club-home", hbsObject);
-  });
-});
+//route to get books by id?
+// router.get("/clubs/:id", function(req, res) {
+//   var clubId = req.params.id;
+//   club.selectByID(clubId, (data) => {
+//     let hbsObject = {
+//       books: data
+//     };
+//     res.render("books", hbsObject);
+//   });
+// });
 
 //INSERT BOOK ROUTES BELOW
 router.get("/books", (req, res) => {
@@ -81,5 +83,12 @@ router.get("/books", (req, res) => {
     res.render("books", hbsObject)
   });
 });
+
+router.post("/api/books", (req, res) => {
+  console.log(req.body.name)
+  res.render("top-picks");
+  
+});
+
 
 module.exports = router;

@@ -1,6 +1,6 @@
 $(() =>{
   //submit button
-  $("#submit").on("click", (event) => {
+  $("#addClub").on("click", (event) => {
     event.preventDefault();
     let newClub = {name: $("#ca").val().trim()};
     // Send the POST request.
@@ -15,7 +15,6 @@ $(() =>{
       });
   });
   $(".delete-club").on("click", function(event) {
-    console.log("club deleted")
     var id = $(this).data("id");
     // Send the DELETE request.
     $.ajax("/api/clubs/" + id, {
