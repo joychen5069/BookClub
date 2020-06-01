@@ -7,6 +7,12 @@ const book = {
         cb(res);
       });
     },
+
+    dropDown: (cb) => {
+      orm.selectAll("books", "clubs", (res) => {
+        cb(res);
+      });
+    }
   };
   
   // Export the database functions for the controller (controller.js).
