@@ -15,7 +15,6 @@ $(() =>{
         });
     });
     $(".delete-book").on("click", function(event) {
-      console.log("delete")
       var id = $(this).data("id");
       // Send the DELETE request.
       $.ajax("/api/books/" + id, {

@@ -18,23 +18,21 @@ $(document).ready(function() {
       // Grabbing the Key for the Object  
       Object.keys(results).map((object) => {
         let tempObject = results[object]
-
+       
         // Returning the value of the declared object
         Object.keys(tempObject).map((key) => {
         let value = tempObject[key];
 
-         //----------- THESE TWO NOT PULLING - WORKING ON IT NOW ----------- 
-          // // Returns the value of the rank 
-          // key === "results"?(Object.values(value).map((tempObject) => {
-          // let rank = tempObject.rank; //NEW
-          // console.log("Rank:", rank) //NEW
-          // })):null
+        //  ----------- THESE TWO NOT PULLING - WORKING ON IT NOW ----------- 
+          // Returns the value of the rank 
+          key === "rank"?
+          // let rank = tempObject.rank; 
+          console.log("Rank:", tempObject.rank):null
 
-          // // Returns the value of the the Amazon URL
-          // key === "results"?(Object.values(value).map((tempObject) => {
-          // let amazon = tempObject.amazon_product_url; //NEW
-          // console.log("Amazon URL:", amazon) //NEW
-          // })):null
+          // Returns the value of the the Amazon URL
+          key === "amazon_product_url"?
+          // let amazon = tempObject.amazon_product_url; 
+          console.log("Amazon URL:", tempObject.amazon_product_url):null
 
           // Returns the value of the book details
           key === "book_details"?(Object.values(value).map((key3) => {
@@ -46,7 +44,6 @@ $(document).ready(function() {
           console.log("Description", description)
           let isbn10 = key3.primary_isbn10;
           console.log("ISBN10", isbn10)
-        
           })):null // end of Object.Values for book_details
 
           }) // end of Object.keys (tempObject)
