@@ -60,7 +60,8 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
-router.get("/clubs/:id", function(req, res) {
+//route to get books by id?
+router.get("/books/:id", function(req, res) {
   var clubId = req.params.id;
   club.selectByID(clubId, (data) => {
     let hbsObject = {
