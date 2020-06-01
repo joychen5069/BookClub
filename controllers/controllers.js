@@ -73,9 +73,6 @@ router.get("/clubs/:id", function(req, res) {
 
 //INSERT BOOK ROUTES BELOW
 router.get("/books", (req, res) => {
-c
-  // res.render("externalAPI", { author });
-  // console.log(author);
 
   book.selectAll((data) => {
     let hbsObject = {
