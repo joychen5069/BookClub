@@ -34,6 +34,7 @@ router.post("/api/clubs", (req, res) => {
     req.body.name
   ], (result) => {
     res.json({ id: result.insertId });
+    
   });
 });
 
@@ -74,12 +75,13 @@ router.delete("/api/clubs/:id", function(req, res) {
 
 //INSERT BOOK ROUTES BELOW
 router.get("/books", (req, res) => {
+
   book.selectAll((data) => {
     let hbsObject = {
       books: data,
       clubs: data
     };
-    // console.log(hbsObject);
+    // console.log(hbsObject)
     res.render("books", hbsObject)
   });
 });
