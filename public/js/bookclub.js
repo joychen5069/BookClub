@@ -1,6 +1,6 @@
 $(() =>{
   //submit button
-  $("#submit").on("click", (event) => {
+  $("#addClub").on("click", (event) => {
     event.preventDefault();
     let newClub = {name: $("#ca").val().trim()};
     // Send the POST request.
