@@ -14,6 +14,13 @@ h2 {
     color: black !important;
 }
 
+h3 {
+    font-weight: 600 !important;
+    color: #b7673c;
+    font-size: 50px !important;
+    text-align: center;
+}
+
 nav {
     background-color: white !important;
     color: black !important;
@@ -27,6 +34,7 @@ nav ul a {
     position: relative;
     text-align: center;
     color: white;
+    margin-top: 10px;
   }
 
   .centeredText {
@@ -48,4 +56,87 @@ nav ul a {
 
 .fas {
     font-size: 30px;
+}
+
+.clubCoverImg{
+    width: 200px !important;
+} 
+
+.clubCard {
+    width: 700px !important;
+    position: absolute;
+    left: 15%;
+    margin-left: -50px !important;
+}
+
+.bookCard {
+    width: 800px !important;
+    position: absolute;
+    left: 25%;
+    margin-left: -50px !important;
+    border: none !important;
+}
+
+.textbody {
+    width: 700px !important;
+    position: absolute;
+    left: 25%;
+    margin-left: -50px;
+    padding: 30px;
+}
+
+.titleArea {
+    /* background-color: rgb(188, 215, 226); */
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-right: 140px;
+    padding-left: 140px;
+}
+
+.textstyle2{
+    font-size: 18px;
+}
+
+#submit {
+    background-color: #b7673c !important;
+}
+
+.btn {
+    background-color:rgb(188, 215, 226) !important;
+    color: black !important;
+}
+
+.leftSideInfo {
+    background-color: rgb(188, 215, 226);
+    height: 100vh;
+    text-align: center;
+}
+
+.dualHeader {
+    margin-top: 30px;
+}
+
+
+.topPicksLeft {
+    text-align: right;
+    line-height: 5px !important;
+}
+
+.bookCover {
+    width: 150px !important;
+    float: left;
+    margin-right: 20px;
+}
+
+.page-footer {
+    background-color: #2C4F50 !important;
+    padding-bottom: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.threeparts {
+    margin-bottom: 15px;
 }

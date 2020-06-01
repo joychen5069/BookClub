@@ -2,13 +2,33 @@
     <div class="nav-wrapper">
       <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">TOP PICKS</a></li>
+        <li><a href="/books">TOP PICKS</a></li>
         <li><a href="/clubs">JOIN A CLUB</a></li>
-        <li><a href="collapsible.html">CREATE CLUB</a></li>
+        <li><a href="/create">CREATE CLUB</a></li>
       </ul>
     </div>
   </nav>
 
 <div class="container">
-    {{club.clubName}}
+
+     <div class="row">
+      <div class="col m4 s12 leftSideInfo">
+        <h3>{{club.clubName}}</h3>
+        <p>Created by:</p> {{club.creator}}
+        <br>
+        <p class="textstyle2">Desicription</p>
+        <br>
+        <a class="delete-club btn-floating btn-tiny waves-effect waves-light red"  data-id="{{this.id}}"><i class="material-icons">delete_forever</i></a>
+
+      </div>
+
+      <div class="col m8 s12">
+        <h4>Book Ideas for {{club.clubName}}</h4>
+      </div>
+    </div>
 </div>
+
+
+<footer class="page-footer">
+  © 2020 Copyright    
+</footer>

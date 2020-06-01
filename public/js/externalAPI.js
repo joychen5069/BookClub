@@ -72,6 +72,20 @@ $(document).ready(function() {
         console.log('GOOGLE API Error');
       });
 
+
+      //lauren - get date to add to html
+
+      n =  new Date();
+      y = n.getFullYear();
+
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      m = months[n.getMonth()];
+      document.getElementById("date").innerHTML = m + " " + y;
+
+      //lauren materialize dropdown trigger
+      $('.dropdown-trigger').dropdown();
+
+
 }); // Final closing tag 
 
 
