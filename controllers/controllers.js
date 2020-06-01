@@ -60,15 +60,6 @@ router.delete("/api/clubs/:id", function(req, res) {
   });
 });
 
-router.get("/clubs/:id", function(req, res) {
-  var clubId = req.params.id;
-  club.selectByID(clubId, (data) => {
-    let hbsObject = {
-      books: data
-    };
-    res.render("club-home", hbsObject);
-  });
-});
 
 //INSERT BOOK ROUTES BELOW
 router.get("/books", (req, res) => {
