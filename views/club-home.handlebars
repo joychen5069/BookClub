@@ -1,14 +1,25 @@
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">TOP PICKS</a></li>
-        <li><a href="/clubs">JOIN A CLUB</a></li>
-        <li><a href="collapsible.html">CREATE CLUB</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">
+      <h2>MY BOOKCLUB</h2>
+    </a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">TOP PICKS</a></li>
+      <li><a href="/clubs">JOIN A CLUB</a></li>
+      <li><a href="collapsible.html">CREATE CLUB</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="container">
-    {{club.clubName}}
+  {{club.clubName}}
+
+
+  <form class="create-book">
+    <div class="form-group">
+      <label for="ca">Book Title:</label>
+      <input type="text" id="ca" name="name">
+    </div>
+    <button class="rounded" type="submit" id="submit">Find Book</button>
+  </form>
 </div>
