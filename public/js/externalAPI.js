@@ -54,12 +54,7 @@ $(document).ready(function() {
               // just put this here so you can easily see the variables to include 
             var listing =
             "<div class='col s12 m6'>"
-            // + rank  need to get this to work 
-            // + title
-            // + author
-            // + description
-            // // + img
-            // + amazon need to get this to work
+            + title
             + "</div>";
 
             $('#best-seller-titles').append(listing);
@@ -96,9 +91,19 @@ $(document).ready(function() {
       });
 } // end of Google API 
 
+
 // // Calls the NYT API function to run 
 nyTimes();
 
-// Calls the Google API function to run
+
+      // lauren - get date to add to html
+
+      n =  new Date();
+      y = n.getFullYear();
+
+      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      m = months[n.getMonth()];
+      document.getElementById("date").innerHTML = m + " " + y;
+
 
 }); // Final closing tag 
