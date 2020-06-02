@@ -9,6 +9,11 @@
     </div>
   </nav>
 
+  {{!-- <div class="bigLandingImg">
+  <img class="responsive-img" src="/assets/bookandcoffeebanner.jpg">
+    <div class="centeredText titleArea"><h3>Join the club!</h3></div>
+</div> --}}
+
 <div class="row titleArea">
   <h3>Find your new club</h3>
 
@@ -30,7 +35,12 @@
             <span class="card-title"><a href="/clubs/{{this.id}}"><h4>{{clubName}}</h4></a></span>
             <p>{{description}}</p>
             <p> Club Creator: {{clubCreator}}</p>
-          </div>
+            </div>
+
+            <div class="card-action">
+            <a href="/clubs/{{this.id}}">Join this club</a>
+            </div>
+          
         </div>
       </div>
     {{/each}}
