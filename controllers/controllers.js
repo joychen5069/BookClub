@@ -26,17 +26,17 @@ router.get("/clubs", (req, res) => {
 });
 
 //Create route to add a club to list
-router.post("/api/clubs", (req, res) => {
-   (req.body.name)
-  club.insertOne([
-    "clubName"
-  ], [
-    req.body.name
-  ], (result) => {
-    res.json({ id: result.insertId });
+// router.post("/api/clubs", (req, res) => {
+//    (req.body.name)
+//   club.insertOne([
+//     "clubName"
+//   ], [
+//     req.body.name
+//   ], (result) => {
+//     res.json({ id: result.insertId });
     
-  });
-});
+//   });
+// });
 
 //Create route to get club by id
 router.get("/clubs/:id", function(req, res) {
@@ -60,6 +60,18 @@ router.delete("/api/clubs/:id", function(req, res) {
       res.status(200).end();
     }
   });
+});
+
+router.post("/api/clubs", (req, res) => {
+  console.log("THIS IS BEING CALLED!!!!!!")
+console.log("req.body", req.body)
+ club.insertOne([
+   "clubName", "clubCreator", "description"
+ ], [
+   req.body.clubName, req.body.userName, req.body.description
+ ], (result) => {
+   res.json({ id: result.insertId });
+ });
 });
 
 //route to get books by id?

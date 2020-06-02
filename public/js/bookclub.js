@@ -1,8 +1,13 @@
 $(() =>{
   //submit button
   $("#addClub").on("click", (event) => {
+    console.log("clicked add")
     event.preventDefault();
-    let newClub = {name: $("#ca").val().trim()};
+    let newClub = {
+      clubName: $("#clubName").val().trim(),
+      userName: $("#userName").val().trim(),
+      description: $("#description").val().trim()};
+      console.log(newClub)
     // Send the POST request.
     $.ajax("/api/clubs", {
       type: "POST",
