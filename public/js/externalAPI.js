@@ -114,11 +114,20 @@ $(document).ready(function() {
 } // end of Google API 
 // // Calls the NYT API function to run 
 nyTimes();
+
+
       // lauren - get date to add to html
+
       n =  new Date();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
+
       // document.getElementById("date").innerHTML = m + " " + y;
 
 }); // Final closing tag
+
+
+
+
+
