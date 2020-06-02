@@ -1,0 +1,26 @@
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/books">TOP PICKS</a></li>
+        <li><a href="/clubs">JOIN A CLUB</a></li>
+        <li><a href="/create">CREATE CLUB</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+<div class="container">
+    <ul class="collection">
+        {{#each books }}
+        <li class="collection-item">
+            {{bookName}}
+            <select class="browser-default" id="club">
+                <option value="" disabled selected>Save to Club</option>
+                
+                <option class="test" id="test">test</option>
+                
+            </select>
+        </li>
+        {{/each}}
+    </ul>
