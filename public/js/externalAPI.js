@@ -52,11 +52,8 @@ $(document).ready(function() {
           })):null // end of Object.Values for book_details
 
               // just put this here so you can easily see the variables to include 
-            var listing =
-            "<div class='col s12 m6'>"
-            + title
-            + "</div>";
-
+            var listing = title
+      
             $('#best-seller-titles').append(listing);
 
 
