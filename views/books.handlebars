@@ -11,6 +11,10 @@
 
 
 <div class="container">
+  <div class="currentAwardsTitle center-align">
+    <h4>Top picks for <span id="date"></span></h4>
+  </div>
+  
 
   <div id="bigheader"></div>
 
@@ -18,16 +22,6 @@
 
 </div>
 
-  <div class="container">
-
-  <ul class="collection">
-    {{#each books }}
-    <li class="collection-item">
-      {{bookName}}
-      <button class="delete-book" data-id="{{this.id}}"><i class="material-icons">delete_forever</i></button>
-    </li>
-    {{/each}}
-  </ul>
 
 <footer class="page-footer">
   © 2020 Copyright    
