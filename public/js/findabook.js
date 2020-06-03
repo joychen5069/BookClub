@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(()=> {
   // console.log("READY")
 
   // Append books to the page 
@@ -41,7 +41,7 @@ $(document).ready(function() {
         });
 
     }); // STILL NEED TO ADD DELETE BUTTON
-    $(".delete-book").on("click", function(event) {
+    $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
       // Send the DELETE request.
       $.ajax("/api/books/" + id, {
@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
 
       // GOOGLE API 
-      function googleBookAPI() { 
+      const googleBookAPI = () => { 
           const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=';
           // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
           const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${newBook}`;
