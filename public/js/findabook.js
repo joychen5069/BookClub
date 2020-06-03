@@ -11,7 +11,7 @@ const selectedBook = (title, author, description, img) => {
     //   '<img src=' + img + '>' + // this is throwing an error for me 
       '</div> </div>';
 
-      $('#searched-books').append(selectedBookHTML);
+      $('#searched-books').empty().append(selectedBookHTML);
   };
 
 //Global variable
