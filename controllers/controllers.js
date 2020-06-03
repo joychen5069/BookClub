@@ -63,7 +63,6 @@ router.delete("/api/clubs/:id", (req, res) => {
 });
 
 router.post("/api/clubs", (req, res) => {
-  console.log("THIS IS BEING CALLED!!!!!!")
 console.log("req.body", req.body)
  club.insertOne([
    "clubName", "clubCreator", "description"

@@ -84,5 +84,10 @@ $(document).ready(()=> {
           .catch(error => {
               console.log('GOOGLE API Error Look Up A Book');
           });
+
+          $("#addToClub").on("click", (event) => {
+            event.preventDefault();
+            console.log(title)
+          }); 
       } // end of Google API 
   }); // Final closing tag 
