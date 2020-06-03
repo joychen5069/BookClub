@@ -12,13 +12,16 @@
 </nav>
 
 <div class="container">
-  {{club.clubName}}
-  <div>
-    <h3>Currently Reading:</h3>
-    <p id="currentlyReading"></p>
-  </div>
-  <h3> Add a Book for your Club!</h3>
-  <form class="create-book">
+    {{club.clubName}}
+   <div>
+   <h3>Currently Reading:</h3>
+   <h4 id = "title"></h4>
+   <p id = "author"></p>
+   <P id = "image"></P>
+ </div>
+    
+  <h3 class="add"> Add a Book for your Club!</h3>
+  <form class="create-book add">
     <div class="form-group">
       <label for="bookName">Book Title:</label>
       <input type="text" id="bookName" name="name">
@@ -31,8 +34,6 @@
   <div id="searched-books"></div>
   <div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>
 </div>
-
-
 
 
 
