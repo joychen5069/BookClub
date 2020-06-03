@@ -65,7 +65,16 @@ $(document).ready(()=> {
           let author = json.items[0].volumeInfo.authors[0];
           console.log("author--------", author)
           let description = json.items[0].volumeInfo.description
-          console.log("description---------",description)         
+          console.log("description---------",description) 
+          $("#addToClub").on("click", (event) => {
+            event.preventDefault();
+            $('#title').append(title)
+            $('#author').append(author)
+            $('#image').append('<img src="' +
+            `${img}` + '">');
+            $('#searched-books').empty();
+            console.log(title)
+          });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {
               selectedBook(title, author, description, img)
@@ -78,10 +87,7 @@ $(document).ready(()=> {
               console.log('GOOGLE API Error Look Up A Book');
           });
 
-          $("#addToClub").on("click", (event) => {
-            event.preventDefault();
-            console.log("hello")
-          }); 
+          
     
       } // end of Google API 
 
