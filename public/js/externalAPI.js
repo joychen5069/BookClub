@@ -127,7 +127,3 @@ nyTimes();
 
 }); // Final closing tag
 
-
-
-
-
