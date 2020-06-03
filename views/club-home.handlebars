@@ -1,41 +1,43 @@
-  <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/books">TOP PICKS</a></li>
-        <li><a href="/clubs">JOIN A CLUB</a></li>
-        <li><a href="/create">CREATE CLUB</a></li>
-      </ul>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">
+      <h2>MY BOOKCLUB</h2>
+    </a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="/books">TOP PICKS</a></li>
+      <li><a href="/clubs">JOIN A CLUB</a></li>
+      <li><a href="/create">CREATE CLUB</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="container">
-    {{club.clubName}}
-   <div>
-   <h3>Currently Reading:</h3>
-   <p id = "currentlyReading"></p>
- </div>
-    <h3> Add a Book for your Club!</h3>
-     <form class="create-book">
-  <div class="form-group">
-    <label for="bookName">Book Title:</label>
-    <input type="text" id="bookName" name="name">
+  {{club.clubName}}
+  <div>
+    <h3>Currently Reading:</h3>
+    <p id="currentlyReading"></p>
   </div>
-  <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
- 
+  <h3> Add a Book for your Club!</h3>
+  <form class="create-book">
+    <div class="form-group">
+      <label for="bookName">Book Title:</label>
+      <input type="text" id="bookName" name="name">
+    </div>
+    <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
 
-</form>
 
-<div id="searched-books"></div>
+  </form>
 
+  <div id="searched-books"></div>
+  <div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>
 </div>
 
- 
 
 
-  <div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>
+
+
 
 
 <footer class="page-footer">
-  © 2020 Copyright    
+  © 2020 Copyright
 </footer>
