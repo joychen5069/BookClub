@@ -21,8 +21,8 @@ $(document).ready(()=> {
       event.preventDefault();
 
       //reveals the add to club button
-      $("#addToClub").show()
-
+      $("#addToClub").show();
+      
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
       // newBook = {
@@ -77,20 +77,17 @@ $(document).ready(()=> {
           console.log("author--------", author)
           let description = json.items[0].volumeInfo.description
           console.log("description---------",description) 
-
-          //add function that if the add button is clicked the search bar disappears
-        $("#addToClub").on("click", (event) => {
-          event.preventDefault();
-          $("#currentlyReading").show()
-          $('#title').append(title)
-          $('#author').append(author)
-          $('#image').append('<img src="' +
-          `${img}` + '">');
-          $('#searched-books').empty();
-          $('.add').hide();
-          $('#addToClub').hide();
-        }); 
-
+          $("#addToClub").on("click", (event) => {
+            event.preventDefault();
+            $("#currentlyReading").show()
+            $('#title').append(title)
+            $('#author').append(author)
+            $('#image').append('<img src="' +
+            `${img}` + '">');
+            $('#searched-books').empty();
+            $('#add').hide()
+            
+          });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {
               selectedBook(title, author, description, img)

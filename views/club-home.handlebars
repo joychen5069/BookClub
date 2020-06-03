@@ -14,19 +14,23 @@
 <div class="container">
     {{club.clubName}}
    <div>
-   <h3>Currently Reading:</h3>
+   <h3 id = "currentlyReading">Currently Reading:</h3>
    <h4 id = "title"></h4>
    <p id = "author"></p>
    <P id = "image"></P>
  </div>
-    
-  <h3 class="add"> Add a Book for your Club!</h3>
-  <form class="create-book add">
-    <div class="form-group">
-      <label for="bookName">Book Title:</label>
-      <input type="text" id="bookName" name="name">
-    </div>
-    <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
+ <div id = "add">
+    <h3> Add a Book for your Club!</h3>
+     <form class="create-book">
+  <div class="form-group">
+    <label for="bookName">Book Title:</label>
+    <input type="text" id="bookName" name="name">
+  </div>
+  <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
+ 
+
+</form>
+ </div>
 
 
   </form>
