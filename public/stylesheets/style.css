@@ -6,6 +6,11 @@ a {
     color: #2C4F50 !important;
 }
 
+h1{
+    color: #2C4F50;
+    font-weight: 600 !important;
+}
+
 
 h2 {
     font-weight:300 !important;
@@ -39,7 +44,7 @@ nav ul a {
 
   .centeredText {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: black;
@@ -68,6 +73,7 @@ nav ul a {
     left: 25%;
     margin-left: -50px !important;
     margin-bottom: 20px !important;
+    max-width: 100%;
 }
 
 .bookCard {
@@ -84,9 +90,9 @@ nav ul a {
 .textbody {
     width: 700px !important;
     position: absolute;
-    left: 25%;
-    margin-left: -50px;
-    padding: 30px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .titleArea {
@@ -101,6 +107,10 @@ nav ul a {
 
 .textstyle2{
     font-size: 18px;
+}
+
+input {
+    color:rgb(33, 150, 170) !important;
 }
 
 #submit {
@@ -153,6 +163,8 @@ nav ul a {
 
 .author {
     font-style: italic;
+    font-size: 22px !important;
+    line-height: 2 !important;
 }
 
 .title{

@@ -95,9 +95,9 @@ $(document).ready(function() {
   // GOOGLE API 
   function googleAPI(rank, isbn10) { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
-    const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
+    // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
     console.log("ISBN10_______________", isbn10)
-    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}${GOOGLE_API_KEY}`;
+    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}`;
     console.log("GOOGLE URL", GOOGLE_ENTIRE_API_URL)
     fetch(`${GOOGLE_ENTIRE_API_URL}`, {
         method: 'get',
@@ -126,4 +126,3 @@ nyTimes();
       // document.getElementById("date").innerHTML = m + " " + y;
 
 }); // Final closing tag
-
