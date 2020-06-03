@@ -47,7 +47,7 @@ $(document).ready(()=> {
       $.ajax("/api/books/" + id, {
         type: "DELETE"
       }).then(
-        function() {
+        () => {
           console.log("deleted book", id)
         }
       );

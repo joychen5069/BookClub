@@ -19,13 +19,13 @@ $(() =>{
         location.reload();
       });
   });
-  $(".delete-club").on("click", function(event) {
+  $(".delete-club").on("click", (event) => {
     var id = $(this).data("id");
     // Send the DELETE request.
     $.ajax("/api/clubs/" + id, {
       type: "DELETE"
     }).then(
-      function() {
+      () => {
         console.log("deleted club", id);
         // Reload the page to get the updated list
         location.reload();

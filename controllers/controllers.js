@@ -39,7 +39,7 @@ router.get("/clubs", (req, res) => {
 // });
 
 //Create route to get club by id
-router.get("/clubs/:id", function(req, res) {
+router.get("/clubs/:id", (req, res) => {
   var clubId = req.params.id;
   club.selectByID(clubId, (data) => {
     let hbsObject = {
@@ -50,9 +50,9 @@ router.get("/clubs/:id", function(req, res) {
 });
 
 //Create route to delete a club by id
-router.delete("/api/clubs/:id", function(req, res) {
+router.delete("/api/clubs/:id", (req, res) => {
   var condition = "id = " + req.params.id;
-  club.delete(condition, function(result) {
+  club.delete(condition, (result) => {
     if (result.affectedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();

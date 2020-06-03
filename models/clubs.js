@@ -15,7 +15,7 @@ const club = {
       });
     },
     
-    delete: function(condition, cb) {
+    delete: (condition, cb) => {
       orm.delete("clubs", condition, (res) => {
         cb(res);
       });

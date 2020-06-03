@@ -67,14 +67,14 @@ const orm = {
   },
   
   //delete a club
-  delete: function(table, condition, cb) {
+  delete: (table, condition, cb) => {
     var queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
     queryString += condition;
 
 
 
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
@@ -83,10 +83,10 @@ const orm = {
     });
   },
 
-  selectbyId: function(table, id, cb) {
+  selectbyId: (table, id, cb) => {
     var queryString = "SELECT * FROM " + table + " WHERE id =" + id;
 
-    connection.query(queryString, function(err, result) {
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }

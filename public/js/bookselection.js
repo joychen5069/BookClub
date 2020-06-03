@@ -14,13 +14,13 @@ $(() =>{
           location.reload();
         });
     });
-    $(".delete-book").on("click", function(event) {
+    $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
       // Send the DELETE request.
       $.ajax("/api/books/" + id, {
         type: "DELETE"
       }).then(
-        function() {
+        () => {
           console.log("deleted book", id);
           // Reload the page to get the updated list
           location.reload();

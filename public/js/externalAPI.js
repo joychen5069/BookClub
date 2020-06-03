@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   let placeholderimg = "https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg";
 
   const topBook = (title, author, description, rank) => {
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 
   //  // NY TIMES API 
-  function nyTimes() {
+  const nyTimes = ()=> {
     const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
     const NYT_API_KEY = 'Ci8Vjoo7efgZspORYyp2AbK75GGVXkRr';
     const NYT_ENTIRE_API_URL = `${NYT_API_URL}${NYT_API_KEY}`;
@@ -93,7 +93,7 @@ $(document).ready(function() {
     });
   } // end of NYT API 
   // GOOGLE API 
-  function googleAPI(rank, isbn10) { 
+  const googleAPI = (rank, isbn10) => { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
     // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
     console.log("ISBN10_______________", isbn10)
