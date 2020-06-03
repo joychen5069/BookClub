@@ -16,7 +16,7 @@ h2 {
 
 h3 {
     font-weight: 600 !important;
-    color: #b7673c;
+    color: rgb(33, 150, 170);
     font-size: 50px !important;
     text-align: center;
 }
@@ -59,23 +59,27 @@ nav ul a {
 }
 
 .clubCoverImg{
-    width: 200px !important;
+    width: 150px !important;
 } 
 
 .clubCard {
-    width: 700px !important;
-    position: absolute;
-    left: 15%;
-    margin-left: -50px !important;
-}
-
-.bookCard {
-    width: 800px !important;
+    width: 600px !important;
     position: absolute;
     left: 25%;
     margin-left: -50px !important;
+    margin-bottom: 20px !important;
+}
+
+.bookCard {
+    position: absolute;
+    left: 0%;
+    margin-left: -50px !important;
     border: none !important;
 }
+
+/* .card-action {
+    padding: 0px !important;
+} */
 
 .textbody {
     width: 700px !important;
@@ -100,7 +104,7 @@ nav ul a {
 }
 
 #submit {
-    background-color: #b7673c !important;
+    background-color: rgb(62, 120, 153) !important;
 }
 
 .btn {
@@ -121,7 +125,6 @@ nav ul a {
 
 .topPicksLeft {
     text-align: right;
-    line-height: 5px !important;
 }
 
 .bookCover {
@@ -139,4 +142,21 @@ nav ul a {
 
 .threeparts {
     margin-bottom: 15px;
+}
+
+.rankStyle {
+    font-size: 60px;
+    text-align: center;
+    color: rgb(188, 215, 226)!important;
+    font-weight: 600;
+}
+
+.author {
+    font-style: italic;
+}
+
+.title{
+    letter-spacing: 1px !important;
+    font-size: 22px !important;
+    color: #2C4F50
 }
