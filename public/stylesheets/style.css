@@ -169,53 +169,10 @@ input {
 
 .title{
     letter-spacing: 1px !important;
-    font-size: 26px !important;
-    color: #2C4F50;
+    font-size: 22px !important;
+    color: #2C4F50
 }
 
-.textstyle3 {
-    font-style: italic;
-}
-
-.card-action {
-    height: 20px !important;
-    padding-top: 10px !important; 
-    margin-bottom: 10px;
-}
-
-/* #date {
-    text-transform: uppercase;
-} */
-
-@media only screen and (max-width: 600px) {
-    .rankStyle {
-        display: none;
-    }
-
-    .topPicksLeft {
-        text-align: center;
-    }
-
-    .bigbookCover {
-        display: inline-block    !important;
-    }
-
-    .centeredText  {
-        top: 50%;
-    }
-
-    .titleArea {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .clubCard {
-        left: 0 !important;
-        margin-left: 10px !important;
-    }
-
-    .textbody {
-        left: 0;
-    }
-
+#addToClub {
+    display:none
 }

@@ -1,6 +1,5 @@
 $(document).ready(()=> {
-  // console.log("READY")
-
+  
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
     const selectedBookHTML = 
@@ -9,26 +8,22 @@ $(document).ready(()=> {
       '</p> <p class="textstyle2">' + description + '</p> </div>' +
       '<div class="col m6 s12">' + 
       '<img src="' +
-      `${img}` + '">' + // this is throwing an error for me 
+      `${img}` + '">' + 
       '</div> </div>';
-
       $('#searched-books').empty().append(selectedBookHTML);
   };
-
-
   //Global variable
   let newBook=""; // Book Title input
-
   // Grabs the book title input when the user submits 
   $("#addBook").on("click", (event) => {
       event.preventDefault();
-      // console.log("clicked add")
-
+      
+      //reveals the add to club button
+      $("#addToClub").show()
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
       // newBook = {
       //   bookName: $("#bookName").val().trim()};
-
       // Calls the google API function after the button is clicked 
       googleBookAPI();
       // Send the POST request.
@@ -39,7 +34,6 @@ $(document).ready(()=> {
         () => {
           console.log("created new book"); 
         });
-
     }); // STILL NEED TO ADD DELETE BUTTON
     $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
@@ -52,7 +46,6 @@ $(document).ready(()=> {
         }
       );
     });
-
       // GOOGLE API 
       const googleBookAPI = () => { 
           const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -84,5 +77,17 @@ $(document).ready(()=> {
           .catch(error => {
               console.log('GOOGLE API Error Look Up A Book');
           });
+
+          $("#addToClub").on("click", (event) => {
+            event.preventDefault();
+            console.log("hello")
+          }); 
+    
       } // end of Google API 
+
+     
+      
   }); // Final closing tag 
+
+  
+
