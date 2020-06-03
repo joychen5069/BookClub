@@ -11,6 +11,10 @@
 
 <div class="container">
     {{club.clubName}}
+   <div>
+   <h3>Currently Reading:</h3>
+   <p id = "currentlyReading"></p>
+ </div>
     <h3> Add a Book for your Club!</h3>
      <form class="create-book">
   <div class="form-group">
@@ -18,11 +22,16 @@
     <input type="text" id="bookName" name="name">
   </div>
   <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
+ 
 
 </form>
 </div>
 
  <div id="searched-books"></div>
+
+
+  <div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>
+
 
 <footer class="page-footer">
   © 2020 Copyright    

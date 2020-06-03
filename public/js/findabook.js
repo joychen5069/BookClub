@@ -11,7 +11,7 @@ const selectedBook = (title, author, description, img) => {
     //   '<img src=' + img + '>' + // this is throwing an error for me 
      
       '</div> </div>' +
-      `<div> <button id="addToClub" class="rounded" type="submit" id="hidden">Select this Book</button> </div>`;
+      // '<div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>';
 
       $('#searched-books').empty().append(selectedBookHTML);
   };
@@ -23,7 +23,7 @@ let newBook=""; // Book Title input
 $("#addBook").on("click", (event) => {
     event.preventDefault();
     // console.log("clicked add") 
-
+  $("#addToClub").show()
     // Grabs the input from the book title text
     newBook = $("#bookName").val().trim();
     // newBook = {
@@ -94,4 +94,12 @@ $("#addBook").on("click", (event) => {
         });
 
     } // end of Google API 
+
+    //Button to select book for the club
+    $("#addToClub").on("click", (event) => {
+      event.preventDefault();
+      console.log("ADDING TO CLUB")
+    });
+
 }); // Final closing tag 
+

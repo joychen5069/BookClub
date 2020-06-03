@@ -160,3 +160,7 @@ nav ul a {
     font-size: 22px !important;
     color: #2C4F50
 }
+
+#addToClub {
+    display:none
+}
