@@ -19,7 +19,8 @@ $(document).ready(()=> {
       event.preventDefault();
       
       //reveals the add to club button
-      $("#addToClub").show()
+      $("#addToClub").show();
+      
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
       // newBook = {
@@ -68,12 +69,14 @@ $(document).ready(()=> {
           console.log("description---------",description) 
           $("#addToClub").on("click", (event) => {
             event.preventDefault();
+            $("#currentlyReading").show()
             $('#title').append(title)
             $('#author').append(author)
             $('#image').append('<img src="' +
             `${img}` + '">');
             $('#searched-books').empty();
-            console.log(title)
+            $('#add').hide()
+            
           });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {
