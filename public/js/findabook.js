@@ -7,8 +7,8 @@ const selectedBook = (title, author, description, img) => {
     '<div class="col m6 s12">' +
       '<p class="textstyle2">' + title +' by ' + author +
       '</p> <p class="textstyle2">' + description + '</p> </div>' +
-      '<div class="col m6 s12">' + img +
-    //   '<img src=' + img + '>' + // this is throwing an error for me 
+      // '<div class="col m6 s12">' + img +
+      '<img src=' + img + '>' + // this is throwing an error for me 
       '</div> </div>';
 
       $('#searched-books').empty().append(selectedBookHTML);
