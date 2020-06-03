@@ -1,11 +1,12 @@
 $(document).ready(function() {
+  let placeholderimg = "https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg";
 
   const topBook = (title, author, description, rank) => {
     const topBookHTML = 
     '<div class="row dualHeader"  id="' + rank + '">' +
     '<div class="col m6 s12 topPicksLeft">' +
-     '<h1>BOOK OF THE MONTH</h1> <br>' +
-      '<p class="textstyle2 title">' + title + '</p> <p class="author"> by ' + author +
+     '<h1>TOP BOOK OF THE MONTH</h1> <br>' +
+      '<p class="textstyle2">' + title + ' by ' + author +
       '</p> <p class="textstyle2">' + description + '</p> </div>' +
       '<div class="col m6 s12">' +
       '<img src="https://images-na.ssl-images-amazon.com/images/I/51ZyEVnRWRL._SX329_BO1,204,203,200_.jpg" class="bigbookCover" id="cover-' + rank + '">' +
@@ -17,7 +18,7 @@ $(document).ready(function() {
   const otherbooks = (title, author, description, rank) => {
     const otherbooksHTML = 
     ' <div class="row"  id="' + rank + '"> <div class="col s2"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
-    '<div class="col m8 s12">' +
+    '<div class="col s8">' +
     '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover" id="cover-' + rank + '"><span class="title">' 
     + title + '</span><p> <span class="author">' + author + '</span> <br>' + description
     + '</p> </li> </ul> </div> </div>';
@@ -94,9 +95,9 @@ $(document).ready(function() {
   // GOOGLE API 
   function googleAPI(rank, isbn10) { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
-    const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
+    // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
     console.log("ISBN10_______________", isbn10)
-    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}${GOOGLE_API_KEY}`;
+    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}`;
     console.log("GOOGLE URL", GOOGLE_ENTIRE_API_URL)
     fetch(`${GOOGLE_ENTIRE_API_URL}`, {
         method: 'get',
@@ -113,11 +114,15 @@ $(document).ready(function() {
 } // end of Google API 
 // // Calls the NYT API function to run 
 nyTimes();
+
+
       // lauren - get date to add to html
+
       n =  new Date();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
-      document.getElementById("date").innerHTML = m + " " + y;
+
+      // document.getElementById("date").innerHTML = m + " " + y;
 
 }); // Final closing tag
