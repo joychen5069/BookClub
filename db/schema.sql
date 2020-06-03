@@ -25,8 +25,6 @@ VALUES ("Club Four", "Tiffany Casey", "This is an amazing club", "Untamed");
 CREATE TABLE books (
 id int AUTO_INCREMENT NOT NULL,
 clubId Int(15) NOT NULL,
-nytRank Int(25) NOT NULL,
-amazon VARCHAR(100) NOT NULL,
 title VARCHAR(100) NOT NULL,
 author VARCHAR(50) NOT NULL,
 description VARCHAR(25) NOT NULL,

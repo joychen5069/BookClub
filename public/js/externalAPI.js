@@ -45,7 +45,7 @@ $(document).ready(function() {
             "<div class='col s12 m6'>"
             + title
             + "</div>";
-            $('#best-seller-titles').append(title);
+            $('#best-seller-titles').append(listing);
           }) // end of Object.keys (tempObject)
         }) // end of Object.keys(results)
       }) //end of fetch 
@@ -56,9 +56,9 @@ $(document).ready(function() {
   // GOOGLE API 
   function googleAPI(isbn10) { 
     const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=isbn:';
-    const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
+    // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
     console.log("ISBN10_______________", isbn10)
-    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}${GOOGLE_API_KEY}`;
+    const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${isbn10}`;
     console.log("GOOGLE URL", GOOGLE_ENTIRE_API_URL)
     fetch(`${GOOGLE_ENTIRE_API_URL}`, {
         method: 'get',
@@ -69,20 +69,20 @@ $(document).ready(function() {
       console.log("-------IMAGE-------", img)
     })     
       .catch(error => {
-        console.log('GOOGLE API Error');
+        console.log('GOOGLE API Error Image');
       });
 } // end of Google API 
 // // Calls the NYT API function to run 
 nyTimes();
 
 
-      // lauren - get date to add to html
+    //   // lauren - get date to add to html
 
-      n =  new Date();
-      y = n.getFullYear();
-      var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-      m = months[n.getMonth()];
-      document.getElementById("date").innerHTML = m + " " + y;
+    //   n =  new Date();
+    //   y = n.getFullYear();
+    //   var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    //   m = months[n.getMonth()];
+    //   document.getElementById("date").innerHTML = m + " " + y;
 
 
 }); // Final closing tag 
