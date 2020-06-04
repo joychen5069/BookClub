@@ -1,4 +1,7 @@
+
+
 $(document).ready(function() {
+
   let placeholderimg = "https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg";
 
   const topBook = (title, author, description, rank) => {
@@ -122,7 +125,7 @@ nyTimes();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
-
       // document.getElementById("date").innerHTML = m + " " + y;
 
 }); // Final closing tag
+
