@@ -131,6 +131,3 @@ $(document).ready(()=> {
      
       
   }); // Final closing tag 
-
-  
-
