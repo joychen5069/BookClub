@@ -1,5 +1,5 @@
 $(document).ready(()=> {
- 
+
 
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
@@ -85,7 +85,6 @@ $(document).ready(()=> {
             $('#author').empty(author)
             $('#image').empty('<img src="' +
             `${img}` + '">');
-            $(".reading").show()
             $("#currentlyReading").show()
             $('#title').append(title)
             $('#author').append(author)
