@@ -46,6 +46,7 @@ const orm = {
     });
   },
 
+  //add a club
   insertOne: (table, cols, vals, cb) => {
     let queryString = "INSERT INTO " + table;
 
@@ -99,6 +100,21 @@ const orm = {
       
     })
   },
+
+  //update club with book title
+  update: function (objColVals, condition, cb) {
+    const queryString = `UPDATE clubs SET currentlyReading = '${objColVals.currentlyReading}' WHERE id = ${condition}`
+
+    console.log("query string", queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
+ 
 
 //   dropDown: function(tab1, tab2, cb) {
 //     var queryString = "SELECT * FROM " + tab1;

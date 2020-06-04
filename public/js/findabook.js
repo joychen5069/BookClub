@@ -23,6 +23,7 @@ $(document).ready(()=> {
       
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
+      
       // newBook = {
       //   bookName: $("#bookName").val().trim()};
       // Calls the google API function after the button is clicked 
@@ -35,6 +36,7 @@ $(document).ready(()=> {
         () => {
           console.log("created new book"); 
         });
+       
     }); // STILL NEED TO ADD DELETE BUTTON
     $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
@@ -75,7 +77,26 @@ $(document).ready(()=> {
             $('#image').append('<img src="' +
             `${img}` + '">');
             $('#searched-books').empty();
-            $('#add').hide()
+            $('#add').hide();
+            $('#addToClub').hide();
+            newTitle = $('#bookName').val().trim();
+            console.log("New Title", newTitle)
+            console.log("New Title", event.target)
+            // console.log("New Title", newTitle)
+            var id = event.target.dataset.id;
+            const data = {
+              currentlyReading: newTitle
+            }
+            console.log("event", event.target.dataset.id)
+            $.ajax("/api/clubs/" + id, {
+              type: "PUT",
+              data,
+            }).then(
+              function() {
+                location.reload();
+              }
+            );
+           
             
           });         
           // Turns the variables into values so that we can pass them 
@@ -94,7 +115,9 @@ $(document).ready(()=> {
     
       } // end of Google API 
 
-     
+     function selectabook() {
+
+     }
       
   }); // Final closing tag 
 

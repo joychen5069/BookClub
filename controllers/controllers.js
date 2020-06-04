@@ -74,16 +74,7 @@ console.log("req.body", req.body)
  });
 });
 
-//route to get books by id?
-// router.get("/clubs/:id", function(req, res) {
-//   var clubId = req.params.id;
-//   club.selectByID(clubId, (data) => {
-//     let hbsObject = {
-//       books: data
-//     };
-//     res.render("books", hbsObject);
-//   });
-// });
+
 
 //INSERT BOOK ROUTES BELOW
 router.get("/books", (req, res) => {
@@ -98,8 +89,26 @@ router.get("/books", (req, res) => {
   });
 });
 
+//udpate book club is reading
+router.put("/api/clubs/:id", function(req, res) {
+  var condition = req.params.id;
+console.log("condition", typeof condition)
+console.log("req.body.currentlyReading", req.body.currentlyReading)
+  club.update({
+    currentlyReading: req.body.currentlyReading
+  }, condition, function(result) {
+    if (result.changedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
+
+
 router.post("/api/books", (req, res) => {
-  console.log(req.body.name)
+  
   res.render("club-home");
   
 });
