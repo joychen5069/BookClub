@@ -1,11 +1,5 @@
 $(() =>{
 
-// $(".sidenav-trigger").classList.toggle("show");
-
-// $('.sidenav-trigger').on("click", (event) => {
-//   alert("clickkkk");
-//   $("#hamburger-menu").attr("display", "block");
-// })
 
 
 $(".button").click(function() {
