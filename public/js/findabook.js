@@ -85,6 +85,7 @@ $(document).ready(()=> {
             $('#author').empty(author)
             $('#image').empty('<img src="' +
             `${img}` + '">');
+            $(".reading").show()
             $("#currentlyReading").show()
             $('#title').append(title)
             $('#author').append(author)
