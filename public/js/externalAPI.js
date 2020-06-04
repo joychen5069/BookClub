@@ -16,7 +16,7 @@ $(document).ready(function() {
     const otherbooksHTML = 
     ' <div class="row"  id="' + rank + '"> <div class="col s4"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
     '<div class="col s8">' +
-    '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover" id="cover-' + rank + '"><span class="title">' 
+    '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover topBookCover" id="cover-' + rank + '"><span class="title">' 
     + title + '</span><p> <span class="author">' + author + '</span> <br>' + description
     + '</p> </li> </ul> </div> </div>';
     console.log(otherbooksHTML);
