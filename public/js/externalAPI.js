@@ -1,21 +1,15 @@
 
 
 $(document).ready(function() {
-  
-  //materialize UI 
-  // $('.sidenav').sidenav();
 
-  $('.sidenav').on("click", (event) => {
-    alert("!!!!!!!!!!!!!!!!!!!!!!CLICK");
-  }) ;
-
+  let placeholderimg = "https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg";
 
   const topBook = (title, author, description, rank) => {
     const topBookHTML = 
     '<div class="row dualHeader"  id="' + rank + '">' +
     '<div class="col m6 s12 topPicksLeft">' +
-     '<h1>BOOK OF THE MONTH</h1> <br>' +
-      '<p class="textstyle2 title">' + title + '</p> <p class="author"> by ' + author +
+     '<h1>TOP BOOK OF THE MONTH</h1> <br>' +
+      '<p class="textstyle2">' + title + ' by ' + author +
       '</p> <p class="textstyle2">' + description + '</p> </div>' +
       '<div class="col m6 s12">' +
       '<img src="https://images-na.ssl-images-amazon.com/images/I/51ZyEVnRWRL._SX329_BO1,204,203,200_.jpg" class="bigbookCover" id="cover-' + rank + '">' +
@@ -26,8 +20,8 @@ $(document).ready(function() {
 
   const otherbooks = (title, author, description, rank) => {
     const otherbooksHTML = 
-    ' <div class="row"  id="' + rank + '"> <div class="col s2"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
-    '<div class="col m8 s12">' +
+    ' <div class="row"  id="' + rank + '"> <div class="col s4"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
+    '<div class="col s8">' +
     '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover" id="cover-' + rank + '"><span class="title">' 
     + title + '</span><p> <span class="author">' + author + '</span> <br>' + description
     + '</p> </li> </ul> </div> </div>';
@@ -123,14 +117,15 @@ $(document).ready(function() {
 } // end of Google API 
 // // Calls the NYT API function to run 
 nyTimes();
+
+
       // lauren - get date to add to html
+
       n =  new Date();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
       // document.getElementById("date").innerHTML = m + " " + y;
-
-
 
 }); // Final closing tag
 

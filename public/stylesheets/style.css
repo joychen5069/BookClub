@@ -14,7 +14,7 @@ h1{
 
 h2 {
     font-weight:300 !important;
-    letter-spacing: .1em;
+    /* letter-spacing: .1em !important; */
     margin: 10px !important;
     color: black !important;
 }
@@ -43,7 +43,7 @@ nav ul a {
   }
 
   .centeredText {
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -83,9 +83,11 @@ nav ul a {
     border: none !important;
 }
 
-/* .card-action {
-    padding: 0px !important;
-} */
+.collection,
+.collection-item.avatar {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
 
 .textbody {
     width: 700px !important;
@@ -148,6 +150,22 @@ input {
     padding-bottom: 15px;
     text-align: center;
     width: 100%;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.page-footer-club {
+    background-color: #2C4F50 !important;
+    /* padding-bottom: 15px !important; */
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    color: white; 
+    padding: 30px;
+
 }
 
 .threeparts {
@@ -167,21 +185,16 @@ input {
     line-height: 2 !important;
 }
 
-.title{
+.title {
     letter-spacing: 1px !important;
-    font-size: 26px !important;
-    color: #2C4F50;
+    font-size: 22px !important;
+    color: #2C4F50
 }
 
-.textstyle3 {
-    font-style: italic;
+#addToClub {
+    display:none
 }
 
-.card-action {
-    height: 20px !important;
-    padding-top: 10px !important; 
-    margin-bottom: 10px;
-}
 
 /* #date {
     text-transform: uppercase;
@@ -306,4 +319,7 @@ li:hover {
 
 .right {
     text-align: right !important;
+
+#currentlyReading{
+    display:none
 }

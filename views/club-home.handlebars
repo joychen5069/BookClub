@@ -16,18 +16,43 @@
   </nav>
   
   </nav>
+
 <div class="container">
-    {{club.clubName}}
-    <h3> Add a Book for your Club!</h3>
-     <form class="create-book">
-  <div class="form-group">
-    <label for="bookName">Book Title:</label>
-    <input type="text" id="bookName" name="name">
+  {{club.clubName}}
+  <div>
+    <h3 id="currentlyReading">Currently Reading:</h3>
+    <h4 id="title"></h4>
+    <p id="author"></p>
+    <P id="image"></P>
+    <button id="changeBook" class="rounded" type="submit" id="submit">Change Book</button>
+
   </div>
-  <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
-</form>
+  <div id="add">
+    <h3> Add a Book for your Club!</h3>
+    <form class="create-book">
+      <div class="form-group">
+        <label for="bookName">Book Title:</label>
+        <input type="text" id="bookName" name="name">
+      </div>
+      <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
+
+
+    </form>
+  </div>
+
+
+  <div id="searched-books"></div>
+
+
+  <div> <button id="addToClub" class="rounded" type="submit">Select this Book</button> </div>
+
 </div>
- <div id="searched-books"></div>
+
+
+
+
+
+
 <footer class="page-footer">
-  © 2020 Copyright    
+  © 2020 Copyright
 </footer>

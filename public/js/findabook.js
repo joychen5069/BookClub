@@ -1,5 +1,5 @@
-$(document).ready(function() {
-  // console.log("READY")
+$(document).ready(()=> {
+  $('#changeBook').hide();
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
     const selectedBookHTML = 
@@ -8,7 +8,7 @@ $(document).ready(function() {
       '</p> <p class="textstyle2">' + description + '</p> </div>' +
       '<div class="col m6 s12">' + 
       '<img src="' +
-      `${img}` + '">' + // this is throwing an error for me 
+      `${img}` + '">' + 
       '</div> </div>';
       $('#searched-books').empty().append(selectedBookHTML);
   };
@@ -17,11 +17,10 @@ $(document).ready(function() {
   // Grabs the book title input when the user submits 
   $("#addBook").on("click", (event) => {
       event.preventDefault();
-      // console.log("clicked add")
+      //reveals the add to club button
+      $("#addToClub").show();
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
-      // newBook = {
-      //   bookName: $("#bookName").val().trim()};
       // Calls the google API function after the button is clicked 
       googleBookAPI();
       // Send the POST request.
@@ -32,8 +31,27 @@ $(document).ready(function() {
         () => {
           console.log("created new book"); 
         });
-    }); // STILL NEED TO ADD DELETE BUTTON
-    $(".delete-book").on("click", function(event) {
+    }); 
+    $("#changeBook").on("click", (event) => {
+      event.preventDefault();
+      //reveals the add to club button
+      $("#addToClub").show();
+      $('#add').show();
+      // Grabs the input from the book title text
+      newBook = $("#bookName").val().trim();
+      // Calls the google API function after the button is clicked 
+      googleBookAPI();
+      // Send the POST request.
+      $.ajax("/api/books", {
+        type: "POST",
+        data: newBook
+      }).then(
+        () => {
+          console.log("created new book"); 
+        });
+    });
+    // STILL NEED TO ADD DELETE BUTTON
+    $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
       // Send the DELETE request.
       $.ajax("/api/books/" + id, {
@@ -45,7 +63,7 @@ $(document).ready(function() {
       );
     });
       // GOOGLE API 
-      function googleBookAPI() { 
+      const googleBookAPI = () => { 
           const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=';
           // const GOOGLE_API_KEY = '&key=AIzaSyA6uNRyxzKhz1rSMQZYAu4wnaE4CvTMITs';
           const GOOGLE_ENTIRE_API_URL = `${GOOGLE_API_URL}${newBook}`;
@@ -63,7 +81,24 @@ $(document).ready(function() {
           let author = json.items[0].volumeInfo.authors[0];
           console.log("author--------", author)
           let description = json.items[0].volumeInfo.description
-          console.log("description---------",description)         
+          console.log("description---------",description) 
+          //have it add to the handlebars and remove search feature
+          $("#addToClub").on("click", (event) => {
+            event.preventDefault();
+            $('#title').empty(title)
+            $('#author').empty(author)
+            $('#image').empty('<img src="' +
+            `${img}` + '">');
+            $("#currentlyReading").show()
+            $('#title').append(title)
+            $('#author').append(author)
+            $('#image').append('<img src="' +
+            `${img}` + '">');
+            $('#searched-books').empty();
+            $('#add').hide();
+            $('#changeBook').show();
+            $('#addToClub').hide();
+          });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {
               selectedBook(title, author, description, img)
@@ -77,4 +112,3 @@ $(document).ready(function() {
           });
       } // end of Google API 
   }); // Final closing tag 
-  
