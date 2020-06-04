@@ -1,7 +1,5 @@
 $(() =>{
 
-
-
 $(".button").click(function() {
   var val = $(this).attr('id');
   if (val == 1) {
@@ -26,28 +24,30 @@ $(document).mouseup(function() {
 });
 
 
-  //submit button
-  $("#addClub").on("click", (event) => {
-    console.log("clicked add")
-    event.preventDefault();
-    let newClub = {
-      clubName: $("#clubName").val().trim(),
-      userName: $("#userName").val().trim(),
-      description: $("#description").val().trim()};
-      console.log(newClub)
+//submit button
+$("#addClub").on("click", (event) => {
+  event.preventDefault();
+  let newClub = {
+    clubName: $("#clubName").val().trim(),
+    userName: $("#userName").val().trim(),
+    description: $("#description").val().trim()};
+  
     // Send the POST request.
     $.ajax("/api/clubs", {
       type: "POST",
       data: newClub
     }).then(
       () => {
-        console.log("created new club");
+      
         // Reload the page to get the updated list
         location.reload();
       });
   });
-  $(".delete-club").on("click", function(event) {
-    var id = $(this).data("id");
+
+//delete club - not using
+$(".delete-club").on("click", function(event) {
+  var id = $(this).data("id");
+
     // Send the DELETE request.
     $.ajax("/api/clubs/" + id, {
       type: "DELETE"
@@ -61,5 +61,4 @@ $(document).mouseup(function() {
   });
 
  
-
 });

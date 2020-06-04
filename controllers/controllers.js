@@ -1,7 +1,6 @@
 const express = require('express');
-
-const club = require('../models/clubs')
-const book = require('../models/books')
+const club = require('../models/clubs');
+const book = require('../models/books');
 
 const router = express.Router();
 
@@ -36,19 +35,20 @@ router.get("/clubs/:id", function(req, res) {
   });
 });
 
-//Create route to delete a club by id
-router.delete("/api/clubs/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
-  club.delete(condition, function(result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
-});
+//Create route to delete a club by id - No Delete Fxn Currently
+// router.delete("/api/clubs/:id", function(req, res) {
+//   var condition = "id = " + req.params.id;
+//   club.delete(condition, function(result) {
+//     if (result.affectedRows == 0) {
+//       // If no rows were changed, then the ID must not exist, so 404
+//       return res.status(404).end();
+//     } else {
+//       res.status(200).end();
+//     }
+//   });
+// });
 
+//Create route to add a new club
 router.post("/api/clubs", (req, res) => {
   console.log("THIS IS BEING CALLED!!!!!!")
 console.log("req.body", req.body)
@@ -62,7 +62,7 @@ console.log("req.body", req.body)
 });
 
 
-//INSERT BOOK ROUTES BELOW
+//create route to view books page
 router.get("/books", (req, res) => {
 
   book.selectAll((data) => {
@@ -75,7 +75,7 @@ router.get("/books", (req, res) => {
   });
 });
 
-//udpate book club is reading
+//create route to update book
 router.put("/api/clubs/:id", function(req, res) {
   var condition = req.params.id;
 console.log("condition", typeof condition)
