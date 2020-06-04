@@ -1,5 +1,5 @@
 $(document).ready(()=> {
-  // $('#changeBook').hide();
+
 
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
@@ -40,7 +40,7 @@ $(document).ready(()=> {
     $("#changeBook").on("click", (event) => {
       event.preventDefault();
       //reveals the add to club button
-      $("#addToClub").show();
+      // $("#addToClub").show();
       $('#add').show();
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
