@@ -21,6 +21,11 @@ $(document).ready(()=> {
       $("#addToClub").show();
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
+
+      
+      // newBook = {
+      //   bookName: $("#bookName").val().trim()};
+
       // Calls the google API function after the button is clicked 
       googleBookAPI();
       // Send the POST request.
@@ -31,6 +36,10 @@ $(document).ready(()=> {
         () => {
           console.log("created new book"); 
         });
+
+       
+    }); // STILL NEED TO ADD DELETE BUTTON
+
     }); 
     $("#changeBook").on("click", (event) => {
       event.preventDefault();
@@ -51,6 +60,7 @@ $(document).ready(()=> {
         });
     });
     // STILL NEED TO ADD DELETE BUTTON
+
     $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
       // Send the DELETE request.
@@ -98,6 +108,25 @@ $(document).ready(()=> {
             $('#add').hide();
             $('#changeBook').show();
             $('#addToClub').hide();
+            newTitle = $('#bookName').val().trim();
+            console.log("New Title", newTitle)
+            console.log("New Title", event.target)
+            // console.log("New Title", newTitle)
+            var id = event.target.dataset.id;
+            const data = {
+              currentlyReading: newTitle
+            }
+            console.log("event", event.target.dataset.id)
+            $.ajax("/api/clubs/" + id, {
+              type: "PUT",
+              data,
+            }).then(
+              function() {
+                location.reload();
+              }
+            );
+           
+           
           });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {
@@ -111,4 +140,6 @@ $(document).ready(()=> {
               console.log('GOOGLE API Error Look Up A Book');
           });
       } // end of Google API 
+
   }); // Final closing tag 
+
