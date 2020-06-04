@@ -27,6 +27,13 @@ const club = {
       });
     },
     
+    update: (data, condition, cb) => {
+      console.log("data", data, "condition", condition)
+      orm.update(data, condition, (res) => {
+        cb(res);
+      });
+    },
+    
     
   };
   

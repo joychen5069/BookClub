@@ -43,7 +43,7 @@ nav ul a {
   }
 
   .centeredText {
-    position: fixed;
+    position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -68,18 +68,22 @@ nav ul a {
 } 
 
 .clubCard {
-    width: 600px !important;
+    margin: auto !important;
+    width: 70%;
+    margin-bottom: 20px !important;
+    /* width: 600px !important;
     position: absolute;
     left: 25%;
     margin-left: -50px !important;
     margin-bottom: 20px !important;
-    max-width: 100%;
+    max-width: 100%; */
 }
 
 .bookCard {
     position: absolute;
+    left: 25%;
     left: 0%;
-    margin-left: -50px !important;
+    margin-left: -70px !important;
     border: none !important;
 }
 
@@ -89,12 +93,13 @@ nav ul a {
     padding-right: 10px !important;
 }
 
-.textbody {
+.createAclubBody {
     width: 700px !important;
+    max-width: 90%;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -20%);
 }
 
 .titleArea {
@@ -195,6 +200,12 @@ input {
     display:none
 }
 
+#best-seller-titles {
+    width: 80%;
+    margin: 50px 0px !important;
+
+}
+
 
 /* #date {
     text-transform: uppercase;
@@ -204,6 +215,8 @@ input {
     position: relative;
     display: inline-block;
 } */
+
+
 
 .navListItem {
     padding-right: 10px;
@@ -217,12 +230,12 @@ input {
     padding: 0px 20px;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     top:64px;
-    width: 130px;
+	/* max-width: 13%; */
     background-color: white;
     font-weight:bold;
     position: absolute;
@@ -230,23 +243,24 @@ ul {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 8;
     height: 200px;
-    left: 10px;
+    left: 35px;
+    text-align: center !important;
 }
 
-li a {
+nav li a {
     color: #000;
     text-decoration: none;
 }
-li {
+nav li {
     padding: 8px 16px;
-    border-bottom: 1px solid #e5e5e5;
 }
-li:last-child {
+nav li:last-child {
     border-bottom: none;
-}
-li:hover {
+} 
+ nav li:hover {
     background-color: #e5e5e5;
     color: white;
+    width: 100%;
 }
 .button{
     width:130px;
@@ -259,7 +273,6 @@ li:hover {
     width:0px;
     height:0px;
     border: 10px solid;
-    /* border-color: white transparent transparent transparent; */
     right:6px;
     top:18px;
 }
@@ -286,25 +299,62 @@ li:hover {
         padding-right: 10px;
     }
 
-    .clubCard {
+    /* .clubCard {
         left: 0 !important;
         margin-left: 10px !important;
+        margin: auto;
+    } */
+
+    .card-action {
+        display: none;
     }
 
-    .textbody {
+    .bookCard {
+        position: absolute;
+        left: 0%;
+        margin-left: -150px !important;
+        border: none !important;
+    }
+
+    #best-seller-titles {
+        width: 100%;
+    }
+
+    .createAclubBody {
         left: 0;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    #cover-1{
+        margin-left: 23px !important;
+        margin-top: 30px;
     }
 
 }
 
+@media only screen and (max-width: 700px) {
+    .responsive-img {
+        display: none;
+        transform: translate(-50%, -20%);
+    }
+    .createAclubBody {
+        transform: inherit;
+        max-width: 80% !important;
+        margin-left: 35px !important;
+    }
+}
+
 @media only screen and (max-width: 992px) {
-    .navpleasework {
+    .fullScreenNav {
         display: block;
     }
 }
 
 @media only screen and (max-width: 993px) {
-    .navpleasework {
+    .fullScreenNav {
         display: none;
     }
 
@@ -315,12 +365,15 @@ li:hover {
     .nav-wrapper {
         display: flex;
     }
+
+    /* #best-seller-titles {
+        max-width: 100%;
+    } */
 }
 
 .right {
     text-align: right !important;
 }
-
 #currentlyReading{
     display:none
 }
