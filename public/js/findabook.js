@@ -1,5 +1,6 @@
 $(document).ready(()=> {
   $('#changeBook').hide();
+
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
     const selectedBookHTML = 
@@ -12,17 +13,17 @@ $(document).ready(()=> {
       '</div> </div>';
       $('#searched-books').empty().append(selectedBookHTML);
   };
+
   //Global variable
   let newBook=""; // Book Title input
   // Grabs the book title input when the user submits 
+  
   $("#addBook").on("click", (event) => {
       event.preventDefault();
       //reveals the add to club button
       $("#addToClub").show();
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
-
-      
       // newBook = {
       //   bookName: $("#bookName").val().trim()};
 
@@ -36,9 +37,6 @@ $(document).ready(()=> {
         () => {
           console.log("created new book"); 
         });
-
-       
-    }); // STILL NEED TO ADD DELETE BUTTON
 
     }); 
     $("#changeBook").on("click", (event) => {
@@ -59,19 +57,7 @@ $(document).ready(()=> {
           console.log("created new book"); 
         });
     });
-    // STILL NEED TO ADD DELETE BUTTON
-
-    $(".delete-book").on("click", (event) => {
-      var id = $(this).data("id");
-      // Send the DELETE request.
-      $.ajax("/api/books/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted book", id)
-        }
-      );
-    });
+    
       // GOOGLE API 
       const googleBookAPI = () => { 
           const GOOGLE_API_URL= 'https://www.googleapis.com/books/v1/volumes?q=';
@@ -140,6 +126,5 @@ $(document).ready(()=> {
               console.log('GOOGLE API Error Look Up A Book');
           });
       } // end of Google API 
-
-  }); // Final closing tag 
-
+});
+  
