@@ -150,6 +150,22 @@ input {
     padding-bottom: 15px;
     text-align: center;
     width: 100%;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.page-footer-club {
+    background-color: #2C4F50 !important;
+    /* padding-bottom: 15px !important; */
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    color: white; 
+    padding: 30px;
+
 }
 
 .threeparts {
@@ -169,7 +185,7 @@ input {
     line-height: 2 !important;
 }
 
-.title{
+.title {
     letter-spacing: 1px !important;
     font-size: 22px !important;
     color: #2C4F50
