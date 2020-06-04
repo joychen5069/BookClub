@@ -14,7 +14,7 @@ h1{
 
 h2 {
     font-weight:300 !important;
-    letter-spacing: .1em;
+    /* letter-spacing: .1em !important; */
     margin: 10px !important;
     color: black !important;
 }
@@ -83,9 +83,11 @@ nav ul a {
     border: none !important;
 }
 
-/* .card-action {
-    padding: 0px !important;
-} */
+.collection,
+.collection-item.avatar {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
 
 .textbody {
     width: 700px !important;
