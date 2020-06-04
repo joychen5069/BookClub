@@ -1,4 +1,5 @@
 $(document).ready(()=> {
+  $('#changeBook').hide();
   
   // Append books to the page 
   const selectedBook = (title, author, description, img) => {
@@ -23,10 +24,10 @@ $(document).ready(()=> {
       
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
-      // newBook = {
-      //   bookName: $("#bookName").val().trim()};
+     
       // Calls the google API function after the button is clicked 
       googleBookAPI();
+
       // Send the POST request.
       $.ajax("/api/books", {
         type: "POST",
@@ -35,7 +36,32 @@ $(document).ready(()=> {
         () => {
           console.log("created new book"); 
         });
-    }); // STILL NEED TO ADD DELETE BUTTON
+    }); 
+
+    $("#changeBook").on("click", (event) => {
+      event.preventDefault();
+      
+      //reveals the add to club button
+      $("#addToClub").show();
+      $('#add').show();
+      
+      // Grabs the input from the book title text
+      newBook = $("#bookName").val().trim();
+     
+      // Calls the google API function after the button is clicked 
+      googleBookAPI();
+
+      // Send the POST request.
+      $.ajax("/api/books", {
+        type: "POST",
+        data: newBook
+      }).then(
+        () => {
+          console.log("created new book"); 
+        });
+    });
+
+    // STILL NEED TO ADD DELETE BUTTON
     $(".delete-book").on("click", (event) => {
       var id = $(this).data("id");
       // Send the DELETE request.
@@ -67,15 +93,23 @@ $(document).ready(()=> {
           console.log("author--------", author)
           let description = json.items[0].volumeInfo.description
           console.log("description---------",description) 
+
+          //have it add to the handlebars and remove search feature
           $("#addToClub").on("click", (event) => {
             event.preventDefault();
+            $('#title').empty(title)
+            $('#author').empty(author)
+            $('#image').empty('<img src="' +
+            `${img}` + '">');
             $("#currentlyReading").show()
             $('#title').append(title)
             $('#author').append(author)
             $('#image').append('<img src="' +
             `${img}` + '">');
             $('#searched-books').empty();
-            $('#add').hide()
+            $('#add').hide();
+            $('#changeBook').show();
+            $('#addToClub').hide();
             
           });         
           // Turns the variables into values so that we can pass them 
