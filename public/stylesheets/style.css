@@ -217,7 +217,7 @@ input {
     padding: 0px 20px;
 }
 
-ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -233,18 +233,18 @@ ul {
     left: 10px;
 }
 
-li a {
+nav li a {
     color: #000;
     text-decoration: none;
 }
-li {
+nav li {
     padding: 8px 16px;
     border-bottom: 1px solid #e5e5e5;
 }
-li:last-child {
+nav li:last-child {
     border-bottom: none;
 }
-li:hover {
+nav li:hover {
     background-color: #e5e5e5;
     color: white;
 }
@@ -319,7 +319,7 @@ li:hover {
 
 .right {
     text-align: right !important;
-
+}
 #currentlyReading{
     display:none
 }
