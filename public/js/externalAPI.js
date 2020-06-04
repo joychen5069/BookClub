@@ -1,6 +1,5 @@
 $(document).ready(function() {
   let placeholderimg = "https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg";
-
   const topBook = (title, author, description, rank) => {
     const topBookHTML = 
     '<div class="row dualHeader"  id="' + rank + '">' +
@@ -11,23 +10,18 @@ $(document).ready(function() {
       '<div class="col m6 s12">' +
       '<img src="https://images-na.ssl-images-amazon.com/images/I/51ZyEVnRWRL._SX329_BO1,204,203,200_.jpg" class="bigbookCover" id="cover-' + rank + '">' +
       '</div> </div>';
-
       $('#bigheader').append(topBookHTML);
   };
-
   const otherbooks = (title, author, description, rank) => {
     const otherbooksHTML = 
-    ' <div class="row"  id="' + rank + '"> <div class="col s2"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
+    ' <div class="row"  id="' + rank + '"> <div class="col s4"> <p class="rankStyle"> ' + rank + '. </p> </div>' +
     '<div class="col s8">' +
-    '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover" id="cover-' + rank + '"><span class="title">' 
+    '<ul class="collection bookCard"><li class="collection-item avatar"><img src="https://previews.123rf.com/images/drakonova/drakonova2002/drakonova200200023/140458305-cartoon-business-cat-holding-empty-white-board-in-hands-successful-businessman-placeholder-vector-il.jpg" class="bookCover topBookCover" id="cover-' + rank + '"><span class="title">' 
     + title + '</span><p> <span class="author">' + author + '</span> <br>' + description
     + '</p> </li> </ul> </div> </div>';
-
+    console.log(otherbooksHTML);
       $('#best-seller-titles').append(otherbooksHTML);
   };
-
-
-
   //  // NY TIMES API 
   function nyTimes() {
     const NYT_API_URL= 'https://api.nytimes.com/svc/books/v3/lists.json?list-name=hardcover-fiction&api-key=';
@@ -40,7 +34,6 @@ $(document).ready(function() {
       .then(json => {
       //Hashmap data to get the results 
       let results = json["results"];
-      
       // Grabbing the Key for the Object  
       Object.keys(results).map((object) => {
         let tempObject = results[object]
@@ -50,8 +43,6 @@ $(document).ready(function() {
         let title;
         let author;
         let description;
-
-
           // Returns the value of the rank 
           key === "rank"?
           // let rank = tempObject.rank; 
@@ -70,21 +61,16 @@ $(document).ready(function() {
           console.log("Description", description)
           rank = tempObject.rank;
           console.log("rank" + rank)
-
           if (object == 0) {
             topBook(title, author, description, rank)
           } else {
             otherbooks(title, author, description, rank)
           };
-
-
           // checking to see if there is an isbns - if so, it will add to the Google API
           key3["primary_isbn10"]? (googleAPI(rank, key3.primary_isbn10)):null
           console.log("ISBN10 in NYT API", key3.primary_isbn10)
-
           })):null // end of Object.Values for book_details
               // just put this here so you can easily see the variables to include 
-            
           }) // end of Object.keys (tempObject)
         }) // end of Object.keys(results)
       }) //end of fetch 
@@ -114,15 +100,10 @@ $(document).ready(function() {
 } // end of Google API 
 // // Calls the NYT API function to run 
 nyTimes();
-
-
       // lauren - get date to add to html
-
       n =  new Date();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
-
       // document.getElementById("date").innerHTML = m + " " + y;
-
 }); // Final closing tag

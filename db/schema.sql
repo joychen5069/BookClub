@@ -22,12 +22,12 @@ VALUES ("Club Three", "Cate Dunn", "This is a fun club", "Where the Crawdads Sin
 INSERT INTO clubs (clubName, clubCreator, description, currentlyReading)
 VALUES ("Club Four", "Tiffany Casey", "This is an amazing club", "Untamed");
 
-CREATE TABLE books (
-id int AUTO_INCREMENT NOT NULL,
-clubId Int(15) NOT NULL,
-title VARCHAR(100) NOT NULL,
-author VARCHAR(50) NOT NULL,
-description VARCHAR(25) NOT NULL,
-img VARCHAR(200) NOT NULL,
-PRIMARY KEY(id)
-);
+-- CREATE TABLE books (
+-- id int AUTO_INCREMENT NOT NULL,
+-- clubId Int(15) NOT NULL,
+-- title VARCHAR(100) NOT NULL,
+-- author VARCHAR(50) NOT NULL,
+-- description VARCHAR(25) NOT NULL,
+-- img VARCHAR(200) NOT NULL,
+-- PRIMARY KEY(id)
+-- );
