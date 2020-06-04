@@ -1,4 +1,14 @@
+
+
 $(document).ready(function() {
+  
+  //materialize UI 
+  // $('.sidenav').sidenav();
+
+  $('.sidenav').on("click", (event) => {
+    alert("!!!!!!!!!!!!!!!!!!!!!!CLICK");
+  }) ;
+
 
   const topBook = (title, author, description, rank) => {
     const topBookHTML = 
@@ -118,6 +128,9 @@ nyTimes();
       y = n.getFullYear();
       var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
       m = months[n.getMonth()];
-      document.getElementById("date").innerHTML = m + " " + y;
+      // document.getElementById("date").innerHTML = m + " " + y;
+
+
 
 }); // Final closing tag
+

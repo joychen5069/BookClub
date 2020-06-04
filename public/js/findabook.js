@@ -17,7 +17,7 @@ $(document).ready(function() {
   // Grabs the book title input when the user submits 
   $("#addBook").on("click", (event) => {
       event.preventDefault();
-      // console.log("clicked add")Q
+      // console.log("clicked add")
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
       // newBook = {
@@ -77,3 +77,4 @@ $(document).ready(function() {
           });
       } // end of Google API 
   }); // Final closing tag 
+  
