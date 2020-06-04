@@ -1,4 +1,31 @@
 $(() =>{
+
+
+
+$(".button").click(function() {
+  var val = $(this).attr('id');
+  if (val == 1) {
+      $(".mobileNav").hide();
+      $(this).attr('id', '0');
+  } else {
+      $(".mobileNav").show();
+      $(this).attr('id', '1');
+  }
+
+});
+
+//Mouse click on setting button and ul list
+$(".mobileNav, .button").mouseup(function() {
+  return false;
+});
+
+//Document Click
+$(document).mouseup(function() {
+  $(".mobileNav").hide();
+  $(".button").attr('id', '0');
+});
+
+
   //submit button
   $("#addClub").on("click", (event) => {
     console.log("clicked add")

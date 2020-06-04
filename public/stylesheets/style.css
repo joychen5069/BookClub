@@ -14,7 +14,7 @@ h1{
 
 h2 {
     font-weight:300 !important;
-    letter-spacing: .1em;
+    /* letter-spacing: .1em !important; */
     margin: 10px !important;
     color: black !important;
 }
@@ -68,31 +68,38 @@ nav ul a {
 } 
 
 .clubCard {
-    width: 600px !important;
+    margin: auto !important;
+    width: 70%;
+    margin-bottom: 20px !important;
+    /* width: 600px !important;
     position: absolute;
     left: 25%;
     margin-left: -50px !important;
     margin-bottom: 20px !important;
-    max-width: 100%;
+    max-width: 100%; */
 }
 
 .bookCard {
     position: absolute;
+    left: 25%;
     left: 0%;
-    margin-left: -50px !important;
+    margin-left: -70px !important;
     border: none !important;
 }
 
-/* .card-action {
-    padding: 0px !important;
-} */
+.collection,
+.collection-item.avatar {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
 
-.textbody {
+.createAclubBody {
     width: 700px !important;
+    max-width: 90%;
     position: absolute;
-    top: 20%;
+    top: 15%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -20%);
 }
 
 .titleArea {
@@ -148,6 +155,22 @@ input {
     padding-bottom: 15px;
     text-align: center;
     width: 100%;
+
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.page-footer-club {
+    background-color: #2C4F50 !important;
+    /* padding-bottom: 15px !important; */
+    text-align: center;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    color: white; 
+    padding: 30px;
+
 }
 
 .threeparts {
@@ -167,7 +190,7 @@ input {
     line-height: 2 !important;
 }
 
-.title{
+.title {
     letter-spacing: 1px !important;
     font-size: 22px !important;
     color: #2C4F50
@@ -177,6 +200,180 @@ input {
     display:none
 }
 
+#best-seller-titles {
+    width: 80%;
+    margin: 50px 0px !important;
+
+}
+
+
+/* #date {
+    text-transform: uppercase;
+} */
+
+/* .dropdown {
+    position: relative;
+    display: inline-block;
+} */
+
+
+
+.navListItem {
+    padding-right: 10px;
+}
+
+.nav-wrapper {
+    position: relative;
+    display: inline-block;
+    display: grid;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    top:64px;
+	/* max-width: 13%; */
+    background-color: white;
+    font-weight:bold;
+    position: absolute;
+    display: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 8;
+    height: 200px;
+    left: 35px;
+    text-align: center !important;
+}
+
+nav li a {
+    color: #000;
+    text-decoration: none;
+}
+nav li {
+    padding: 8px 16px;
+}
+nav li:last-child {
+    border-bottom: none;
+} 
+ nav li:hover {
+    background-color: #e5e5e5;
+    color: white;
+    width: 100%;
+}
+.button{
+    width:130px;
+    height:20px;
+    border-radius:5px;
+    font-weight:bold;
+}
+.button:before{
+    position:absolute;
+    width:0px;
+    height:0px;
+    border: 10px solid;
+    right:6px;
+    top:18px;
+}
+
+@media only screen and (max-width: 600px) {
+    .rankStyle {
+        display: none;
+    }
+
+    .topPicksLeft {
+        text-align: center;
+    }
+
+    .bigbookCover {
+        display: inline-block    !important;
+    }
+
+    .centeredText  {
+        top: 50%;
+    }
+
+    .titleArea {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    /* .clubCard {
+        left: 0 !important;
+        margin-left: 10px !important;
+        margin: auto;
+    } */
+
+    .card-action {
+        display: none;
+    }
+
+    .bookCard {
+        position: absolute;
+        left: 0%;
+        margin-left: -150px !important;
+        border: none !important;
+    }
+
+    #best-seller-titles {
+        width: 100%;
+    }
+
+    .createAclubBody {
+        left: 0;
+    }
+
+    h2 {
+        font-size: 30px !important;
+    }
+
+    #cover-1{
+        margin-left: 23px !important;
+        margin-top: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive-img {
+        display: none;
+        transform: translate(-50%, -20%);
+    }
+    .createAclubBody {
+        transform: inherit;
+        max-width: 80% !important;
+        margin-left: 35px !important;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .fullScreenNav {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 993px) {
+    .fullScreenNav {
+        display: none;
+    }
+
+    h2 {
+        text-align: center !important;
+    }
+
+    .nav-wrapper {
+        display: flex;
+    }
+
+    /* #best-seller-titles {
+        max-width: 100%;
+    } */
+}
+
+.right {
+    text-align: right !important;
+}
 #currentlyReading{
     display:none
 }

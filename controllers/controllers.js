@@ -25,7 +25,6 @@ router.get("/clubs", (req, res) => {
   });
 });
 
-
 //Create route to get club by id
 router.get("/clubs/:id", function(req, res) {
   var clubId = req.params.id;
@@ -61,7 +60,6 @@ console.log("req.body", req.body)
    res.json({ id: result.insertId });
  });
 });
-
 
 
 //INSERT BOOK ROUTES BELOW

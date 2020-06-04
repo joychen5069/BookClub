@@ -1,18 +1,24 @@
-  <nav>
-    <div class="nav-wrapper">
+
+ <nav>
+    <div class="nav-wrapper ">
       <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/books">TOP PICKS</a></li>
-        <li><a href="/clubs">JOIN A CLUB</a></li>
-        <li><a href="/create">CREATE CLUB</a></li>
-      </ul>
+      <a href="#" data-target="hamburger-menu" class="button sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="mobileNav">
+            <li><a href="/books">TOP PICKS</a></li><br>
+            <li><a href="/clubs">JOIN A CLUB</a></li><br>
+            <li><a href="/create">CREATE CLUB</a></li>
+          </ul>
+      
+       <div class="right fullScreenNav">
+        <a href="/books" class="navListItem">TOP PICKS</a>
+        <a href="/clubs" class="navListItem">JOIN A CLUB</a>
+        <a href="/create" class="navListItem">CREATE CLUB</a>
+      </div>
     </div>
   </nav>
 
-
 <div class="container">
   <div class="currentAwardsTitle center-align">
-    <h4>Top picks for <span id="date"></span></h4>
   </div>
   
 
@@ -20,7 +26,9 @@
 
   <div id="best-seller-titles"></div>
 
+
 </div>
+
 
 
 <footer class="page-footer">
