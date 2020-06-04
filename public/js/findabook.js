@@ -16,7 +16,7 @@ $(document).ready(()=> {
 
   //Global variable
   let newBook=""; // Book Title input
-  // Grabs the book title input when the user submits 
+  
   
   $("#addBook").on("click", (event) => {
       event.preventDefault();
@@ -24,9 +24,7 @@ $(document).ready(()=> {
       $("#addToClub").show();
       // Grabs the input from the book title text
       newBook = $("#bookName").val().trim();
-      // newBook = {
-      //   bookName: $("#bookName").val().trim()};
-
+      
       // Calls the google API function after the button is clicked 
       googleBookAPI();
       // Send the POST request.
@@ -79,6 +77,8 @@ $(document).ready(()=> {
           let description = json.items[0].volumeInfo.description
           console.log("description---------",description) 
           //have it add to the handlebars and remove search feature
+
+          //Select Book Button
           $("#addToClub").on("click", (event) => {
             event.preventDefault();
             $('#title').empty(title)
@@ -95,14 +95,11 @@ $(document).ready(()=> {
             $('#changeBook').show();
             $('#addToClub').hide();
             newTitle = $('#bookName').val().trim();
-            console.log("New Title", newTitle)
-            console.log("New Title", event.target)
-            // console.log("New Title", newTitle)
             var id = event.target.dataset.id;
             const data = {
               currentlyReading: newTitle
             }
-            console.log("event", event.target.dataset.id)
+            
             $.ajax("/api/clubs/" + id, {
               type: "PUT",
               data,
@@ -111,8 +108,6 @@ $(document).ready(()=> {
                 location.reload();
               }
             );
-           
-           
           });         
           // Turns the variables into values so that we can pass them 
           if (author !== null) {

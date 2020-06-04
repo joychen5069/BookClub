@@ -9,11 +9,13 @@ $(() =>{
         data: newBook
       }).then(
         () => {
-          console.log("created new book");
+        
           // Reload the page to get the updated list
           location.reload();
         });
     });
+
+    //delete book - not using
     $(".delete-book").on("click", function(event) {
       var id = $(this).data("id");
       // Send the DELETE request.
@@ -21,7 +23,7 @@ $(() =>{
         type: "DELETE"
       }).then(
         function() {
-          console.log("deleted book", id);
+          
           // Reload the page to get the updated list
           location.reload();
         }
