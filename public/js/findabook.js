@@ -6,7 +6,7 @@ $(document).ready(()=> {
     const selectedBookHTML = 
     '<div class="col m6 s12">' +
       '<p class="textstyle2">' + title +' by ' + author +
-      '</p> <p class="textstyle2">' + description + '</p> </div>' +
+      '</p> <h6>' + description + '</h6> </div>' +
       '<div class="col m6 s12">' + 
       '<img src="' +
       `${img}` + '">' + 

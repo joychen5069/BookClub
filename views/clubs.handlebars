@@ -1,5 +1,4 @@
-
- <nav>
+<nav>
     <div class="nav-wrapper ">
       <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
       <a href="#" data-target="hamburger-menu" class="button sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -8,7 +7,7 @@
             <li><a href="/clubs">JOIN A CLUB</a></li><br>
             <li><a href="/create">CREATE CLUB</a></li>
           </ul>
-      
+      {{!-- List that only displays on mobile --}}
        <div class="right fullScreenNav">
         <a href="/books" class="navListItem">TOP PICKS</a>
         <a href="/clubs" class="navListItem">JOIN A CLUB</a>
@@ -20,19 +19,22 @@
   
 <div class="row titleArea">
   <div class="col s12">
-  <h3>Find your new club</h3>
+    <h3>Find your new club</h3>
   </div>
 
   <div class="textstyle2">
     <p>Looking for a book club to join? Here you can find a variety of book clubs that are open to the public and already exist. We believe anyone can and should join a book club. Use this page as your guide to find the right club for you.</p>
   </div>
 </div>
+
 <div class="container">
    {{#each clubs}}
       <div class="card clubCard horizontal">
+        
         <div class="card-image clubCoverImg">
           <img src="https://images-na.ssl-images-amazon.com/images/I/91twTG-CQ8L.jpg">
         </div>
+
         <div class="card-stacked">
           <div class="card-content">
             <span class="card-title"><a href="/clubs/{{this.id}}"><h4>{{clubName}}</h4></a></span>
@@ -49,6 +51,7 @@
       </div>
     {{/each}}
 </div>
+
 <footer class="page-footer-club">
   © 2020 Copyright    
 </footer>
