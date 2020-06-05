@@ -14,7 +14,6 @@ h1{
 
 h2 {
     font-weight:300 !important;
-    /* letter-spacing: .1em !important; */
     margin: 10px !important;
     color: black !important;
 }
@@ -71,12 +70,15 @@ nav ul a {
     margin: auto !important;
     width: 70%;
     margin-bottom: 20px !important;
-    /* width: 600px !important;
-    position: absolute;
-    left: 25%;
-    margin-left: -50px !important;
-    margin-bottom: 20px !important;
-    max-width: 100%; */
+}
+
+.clubContainer {
+    margin-bottom: 120px !important;
+}
+
+.bookSearch {
+    min-height: 400px;
+    height: 100%;
 }
 
 .bookCard {
@@ -103,7 +105,6 @@ nav ul a {
 }
 
 .titleArea {
-    /* background-color: rgb(188, 215, 226); */
     width: 100%;
     text-align: center;
     padding-top: 30px;
@@ -129,10 +130,17 @@ input {
     color: black !important;
 }
 
-.leftSideInfo {
-    background-color: rgb(188, 215, 226);
+.clubHome {
     height: 100vh;
+    min-height: 100%; 
     text-align: center;
+}
+
+.right-side {
+    height: 300px;
+    padding-top: 20px;
+    text-align: left;
+    margin-bottom: 50px;
 }
 
 .dualHeader {
@@ -155,15 +163,12 @@ input {
     padding-bottom: 15px;
     text-align: center;
     width: 100%;
-
-    position: fixed;
     left: 0;
     bottom: 0;
 }
 
 .page-footer-club {
     background-color: #2C4F50 !important;
-    /* padding-bottom: 15px !important; */
     text-align: center;
     width: 100%;
     left: 0;
@@ -206,18 +211,6 @@ input {
 
 }
 
-
-/* #date {
-    text-transform: uppercase;
-} */
-
-/* .dropdown {
-    position: relative;
-    display: inline-block;
-} */
-
-
-
 .navListItem {
     padding-right: 10px;
 }
@@ -242,7 +235,6 @@ nav ul {
     display: none;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 8;
-    height: 200px;
     left: 35px;
     text-align: center !important;
 }
@@ -278,6 +270,9 @@ nav li:last-child {
 }
 
 @media only screen and (max-width: 600px) {
+    .centeredMobile {
+        text-align: center;
+    }
     .rankStyle {
         display: none;
     }
@@ -290,6 +285,11 @@ nav li:last-child {
         display: inline-block    !important;
     }
 
+    .bigbook {
+        height: 400px;
+        width: auto;
+    }
+
     .centeredText  {
         top: 50%;
     }
@@ -299,11 +299,6 @@ nav li:last-child {
         padding-right: 10px;
     }
 
-    /* .clubCard {
-        left: 0 !important;
-        margin-left: 10px !important;
-        margin: auto;
-    } */
 
     .card-action {
         display: none;
@@ -344,6 +339,20 @@ nav li:last-child {
         transform: inherit;
         max-width: 80% !important;
         margin-left: 35px !important;
+        margin-top: -90px !important;
+    }
+
+    .mobileLeaveSpace{
+        height: 100vh !important;
+    }
+
+    .mobileHeaderText {
+        margin-top: 75px;
+        height: 85px;
+    }
+
+    .centeredText {
+        position: relative;
     }
 }
 
@@ -366,9 +375,7 @@ nav li:last-child {
         display: flex;
     }
 
-    /* #best-seller-titles {
-        max-width: 100%;
-    } */
+   
 }
 
 .right {

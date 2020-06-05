@@ -1,5 +1,4 @@
-
- <nav>
+<nav>
     <div class="nav-wrapper ">
       <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
       <a href="#" data-target="hamburger-menu" class="button sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -8,7 +7,7 @@
             <li><a href="/clubs">JOIN A CLUB</a></li><br>
             <li><a href="/create">CREATE CLUB</a></li>
           </ul>
-      
+       {{!-- List that only displays on mobile --}}
        <div class="right fullScreenNav">
         <a href="/books" class="navListItem">TOP PICKS</a>
         <a href="/clubs" class="navListItem">JOIN A CLUB</a>
@@ -18,35 +17,46 @@
   </nav>
 
   
-<div class="container">
-  {{club.clubName}}
-  <div>
-    <h3 id="currentlyReading">Currently Reading:</h3>
-    <h4 id="title">{{club.currentlyReading}}</h4>
-    <p id="author"></p>
-    <p id="image"></p>
-    <button id="changeBook" class="rounded" type="submit">Change Book</button>
-  </div>
-  <div id="add">
-    <h3> Add a Book for your Club!</h3>
+<div class="container clubContainer">
+
+   <div class="row  dualHeader">
+      <div class="col m6 s12 topPicksLeft">
+        <img src="https://dummyimage.com/400x600/d6d2d6/ffffff&text=book+cover" height="500" class="bigbookCover">
+      </div>
+
+      <div class="col m6 s12 centeredMobile">
+        <h1>{{club.clubName}}</h1>
+        <h6 id="creator">Created by: {{club.clubCreator}}</h6>
+        <h6 id="description">{{club.description}}</h6>
+        <br>
+        <h6 id="currentlyReading" class="textstyle2" >Currently Reading:</h6>
+        <h4 id="title">{{club.currentlyReading}}</h4>
+        <button id="changeBook" class="btn waves-effect waves-light" type="submit">Change Book</button>
+        </div> 
+   </div>
+
+  <div class="row clubCard bookSearch centeredMobile" id="add">
+    <h4>Find a Book for your Club!</h4>
     <form class="create-book">
       <div class="form-group">
         <label for="bookName">Book Title:</label>
         <input type="text" id="bookName" name="name">
       </div>
-      <button id="addBook" class="rounded" type="submit" id="submit">Find Book</button>
     </form>
+    <button id="addBook" class="btn waves-effect waves-light" type="submit" id="submit">Find Book</button>
+  
+    <div id="searched-books" ></div>
+
+    <div> 
+      <button id="addToClub"  data-id={{club.id}} class="btn waves-effect waves-light {{club.id}}" type="submit">Select this Book</button>
+    </div>
   </div>
-  <div id="searched-books"></div>
-  <div> 
-    <button id="addToClub"  data-id={{club.id}} class="rounded {{club.id}}" type="submit">Select this Book</button>
-  </div>
+    
 </div>
 
 
-{{!-- 
-footer is covering the add to club button? 
+<footer class="page-footer-club">
+    © 2020 Copyright    
+</footer> 
+        
 
-<footer class="page-footer">
-  © 2020 Copyright
-</footer> --}}

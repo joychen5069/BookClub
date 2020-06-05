@@ -1,4 +1,3 @@
-
  <nav>
     <div class="nav-wrapper ">
       <a href="/" class="brand-logo"><h2>MY BOOKCLUB</h2></a>
@@ -8,7 +7,7 @@
             <li><a href="/clubs">JOIN A CLUB</a></li><br>
             <li><a href="/create">CREATE CLUB</a></li>
           </ul>
-      
+      {{!-- List that only displays on mobile --}}
        <div class="right fullScreenNav">
         <a href="/books" class="navListItem">TOP PICKS</a>
         <a href="/clubs" class="navListItem">JOIN A CLUB</a>
@@ -17,44 +16,44 @@
     </div>
   </nav>
 
-<div class="bigLandingImg">
+
+<div class="bigLandingImg mobileLeaveSpace">
   <img class="responsive-img" src="/assets/bookandcoffee.jpg">
-    <div class="container createAclubBody">
+  
+  <div class="container createAclubBody">
+    <h1>Create a Club</h1>
 
-  <h1>Create a Club</h1>
+    <div class="row create-club">
+      <form class="col s12 form-group">
 
-
-  <div class="row create-club">
-    <form class="col s12 form-group">
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" id="clubName" name="name">
-          <label for="clubName">Club Name:</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="clubName" name="name">
+            <label for="clubName">Club Name:</label>
+          </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" id="userName" name="name">
-          <label for="userName">Your name:</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="userName" name="name">
+            <label for="userName">Your name:</label>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" id="description" name="name">
+            <label for="description">Description of your bookclub:</label>
+          </div>
+        </div>
+
+        <button class="btn waves-effect waves-light" type="submit" id="addClub">Create
+        </button>
+
+      </form>
      </div>
-
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" id="description" name="name">
-          <label for="description">Description of your bookclub:</label>
-        </div>
-      </div>
-
-      <button class="btn waves-effect waves-light" type="submit" id="addClub">Create
-      </button>
-
-    </form>
-  </div>
-
     </div>
+  </div>
 
 
     <footer class="page-footer">
