@@ -103,7 +103,7 @@ const orm = {
 
   //update club with book title
   update: function (objColVals, condition, cb) {
-    const queryString = `UPDATE clubs SET currentlyReading = '${objColVals.currentlyReading}' WHERE id = ${condition}`
+    const queryString = `UPDATE clubs SET currentlyReading = '${objColVals.currentlyReading}', currentImgUrl = '${objColVals.currentImgUrl}', currentAuthor = '${objColVals.currentAuthor}' WHERE id = ${condition}`
 
     console.log("query string", queryString);
     connection.query(queryString, function(err, result) {

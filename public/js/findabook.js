@@ -95,9 +95,14 @@ $(document).ready(()=> {
             $('#changeBook').show();
             $('#addToClub').hide();
             newTitle = $('#bookName').val().trim();
+
+
+
             var id = event.target.dataset.id;
             const data = {
-              currentlyReading: newTitle
+              currentlyReading: title,
+              currentImgUrl: img,
+              currentAuthor: author
             }
             
             $.ajax("/api/clubs/" + id, {
