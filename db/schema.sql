@@ -10,6 +10,8 @@ clubName VARCHAR(30) NOT NULL,
 clubCreator VARCHAR(30) NOT NULL,
 description VARCHAR (500) NOT NULL,
 currentlyReading VARCHAR (30),
+currentImgUrl VARCHAR (500),
+currentAuthor VARCHAR (30)
 PRIMARY KEY(id)
 );
 
@@ -23,3 +25,15 @@ INSERT INTO clubs (clubName, clubCreator, description, currentlyReading)
 VALUES ("Club Four", "Tiffany Casey", "This is an amazing club", "Untamed");
 
 
+
+CREATE TABLE books (
+id int AUTO_INCREMENT NOT NULL,
+clubId Int(15) NOT NULL,
+nytRank Int(25) NOT NULL,
+amazon VARCHAR(100) NOT NULL,
+title VARCHAR(100) NOT NULL,
+author VARCHAR(50) NOT NULL,
+description VARCHAR(25) NOT NULL,
+img VARCHAR(200) NOT NULL,
+PRIMARY KEY(id)
+);

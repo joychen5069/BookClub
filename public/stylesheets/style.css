@@ -73,7 +73,8 @@ nav ul a {
 }
 
 .clubContainer {
-    margin-bottom: 120px !important;
+    margin-bottom: 30px !important;
+    min-height: 100vh;
 }
 
 .bookSearch {
@@ -349,6 +350,8 @@ nav li:last-child {
     .mobileHeaderText {
         margin-top: 75px;
         height: 85px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     .centeredText {

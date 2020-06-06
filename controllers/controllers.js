@@ -81,7 +81,9 @@ router.put("/api/clubs/:id", function(req, res) {
 console.log("condition", typeof condition)
 console.log("req.body.currentlyReading", req.body.currentlyReading)
   club.update({
-    currentlyReading: req.body.currentlyReading
+    currentlyReading: req.body.currentlyReading,
+    currentImgUrl: req.body.currentImgUrl,
+    currentAuthor: req.body.currentAuthor
   }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404

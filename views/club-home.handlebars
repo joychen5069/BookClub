@@ -21,7 +21,7 @@
 
    <div class="row  dualHeader">
       <div class="col m6 s12 topPicksLeft">
-        <img src="https://dummyimage.com/400x600/d6d2d6/ffffff&text=book+cover" height="500" class="bigbookCover">
+        <img src="{{club.currentImgUrl}}" height="400" class="bigbookCover">
       </div>
 
       <div class="col m6 s12 centeredMobile">
@@ -31,6 +31,7 @@
         <br>
         <h6 id="currentlyReading" class="textstyle2" >Currently Reading:</h6>
         <h4 id="title">{{club.currentlyReading}}</h4>
+        <h4 id="author">by: {{club.currentAuthor}}</h4>
         <button id="changeBook" class="btn waves-effect waves-light" type="submit">Change Book</button>
         </div> 
    </div>
