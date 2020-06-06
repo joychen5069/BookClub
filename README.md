@@ -46,10 +46,13 @@ You can view an interactive prototype of the design idea for the site here: http
 
 ## Credits 
 lolo-bc: Front-end mostly, responsiveness, some jquery in assistance with Joy, Cate, and Tiffany
+
 joychen5069: Worked with Cate on backend routes and the express server
+
 CateDunn: Worked with Joy on backend routes and the express server
+
 TiffanyCasey: Worked on setting up the third-party API calls
 
 ## Deployed Site
 
-tbd 
+https://book-club-application.herokuapp.com/
