@@ -331,7 +331,7 @@ nav li:last-child {
 
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 710px) {
     .responsive-img {
         display: none;
         transform: translate(-50%, -20%);
@@ -341,6 +341,7 @@ nav li:last-child {
         max-width: 80% !important;
         margin-left: 35px !important;
         margin-top: -90px !important;
+        left: 0;
     }
 
     .mobileLeaveSpace{
@@ -349,7 +350,7 @@ nav li:last-child {
 
     .mobileHeaderText {
         margin-top: 75px;
-        height: 85px;
+        height: 130px;
         padding-left: 30px;
         padding-right: 30px;
     }
