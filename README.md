@@ -19,22 +19,24 @@ Materialize as the CSS Framework
 
 ## Directions for future development 
 
-* login feature
+* login feature:
     User will be able to create an account to manage bookclubs they have created as well as keep track of clubs they have joined
 
-* Add books to your club
+* Add books to your club:
     Instead of changing the book currently be being read, store the books that users have suggested as a separate feature, with current book being managed by the club creator
 
-* Voting feature
+* Voting feature:
     Users can upvote or downvote other members book ideas as part of the selection process for what book to read next 
 
-* Administrative Access
+* Administrative Access:
     Delete club accounts/pages
 
 * URL to purchase books off Amazon
 
-* Book Search 
+* Book Search: 
     a more flexible serach results feautre that brings back all matching choices from users search criteria. Add the ability to search for multiple books by author 
+
+* Re-direct create form to newly added club page
 
 
 ## Design & Usage 
@@ -46,8 +48,11 @@ You can view an interactive prototype of the design idea for the site here: http
 
 ## Credits 
 lolo-bc: Front-end mostly, responsiveness, some jquery in assistance with Joy, Cate, and Tiffany
+
 joychen5069: Worked with Cate on backend routes and the express server
+
 CateDunn: Worked with Joy on backend routes and the express server
+
 TiffanyCasey: Worked on setting up the third-party API calls
 
 ## Deployed Site
